@@ -41,7 +41,7 @@ const CategoriesAdd = () => {
                                         // onChange={handleChange}
                                         />
                                     </div>
-                                    <div className="col-xl-4 mb-3">
+                                    <div className="col-xl-4 mb-3 s">
                                         <label for="exampleFormControlInput1" class="form-label">Status</label>
                                         <select className="form-control" aria-label="Default select example">
                                             <option selected>Open this select Status</option>
