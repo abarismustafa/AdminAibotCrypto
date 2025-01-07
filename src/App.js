@@ -30,6 +30,16 @@ import DurationAdd from "./components/aIInvestment/duration/durationAdd/Duration
 import EcomercePage from "./pages/ecommerce/categories";
 import CategoriesAdd from "./components/ecommerce/categories/categoriesAdd/CategoriesAdd";
 
+import ForexAccount from "./components/masters/forex/ForexAccount";
+import ForexAdd from "./components/masters/forex/masterform/ForexAdd";
+import ForexPlans from "./components/masters/plans/ForexPlans";
+import PlansAdd from "./components/masters/plans/masterform/PlansAdd";
+import DurationPlans from "./components/masters/duration/DurationPlans";
+import DurationAdds from "./components/masters/duration/masterform/DurationAdds";
+import InvestmentsPlans from "./components/masters/investment/InvestmentsPlans";
+import SignalPage from "./components/masters/signal/Signal";
+import SignalsAdd from "./components/masters/signal/masterform/SignalsAdd";
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -125,6 +135,25 @@ function App() {
               <Route path='duration-add' element={<DurationAdd />} />
               <Route path='ecommerce/category' element={<EcomercePage />} />
               <Route path='ecommerce/category/add' element={<CategoriesAdd />} />
+              {/* forex junaid */}
+              <Route path="ext/forex/account" element={<ForexAccount />} />
+              <Route path="add-ext/forex/account" element={<ForexAdd />} />
+              <Route path="edit-ext/forex/account/:id" element={<ForexAdd />} />
+
+              <Route path="ext/forex/plan" element={<ForexPlans />} />
+              <Route path="add-ext/forex/plan" element={<PlansAdd />} />
+              <Route path="edit-ext/forex/plan/:id" element={<PlansAdd />} />
+
+              <Route path="ext/forex/duration" element={<DurationPlans />} />
+              <Route path="add-ext/forex/duration" element={<DurationAdds />} />
+              <Route path="edit-ext/forex/duration/:id" element={<DurationAdds />} />
+
+              <Route path="ext/forex/investment" element={<InvestmentsPlans />} />
+
+              <Route path="ext/forex/signal" element={<SignalPage />} />
+              <Route path="add-ext/forex/signal" element={<SignalsAdd />} />
+              <Route path="edit-ext/forex/signal/:id" element={<SignalsAdd />} />
+
 
               <Route path="*" element={<PageNotFound />} />
             </Route>
