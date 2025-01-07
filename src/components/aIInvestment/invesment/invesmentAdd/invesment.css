@@ -1,0 +1,46 @@
+.card-set {
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.card-set h5 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.card-set p {
+    color: #fff;
+}
+
+.status-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.active {
+    color: #5f67f5;
+}
+
+.completed {
+    color: #4ce3ac;
+}
+
+.cancelled {
+    color: #aaaaaa;
+}
+
+.rejected,
+.loss {
+    color: #e63946;
+}
+
+.win {
+    color: #4ce3ac;
+}
+
+.draw {
+    color: #ffcc00;
+}
