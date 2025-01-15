@@ -5,6 +5,7 @@ import "./assets/css/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.min.js";
 // import "./assets/css/style.css";
 import "./common/CustomInputField/index.module.scss";
 import "./assets/css/project.css"
@@ -39,6 +40,11 @@ import DurationAdds from "./components/masters/duration/masterform/DurationAdds"
 import InvestmentsPlans from "./components/masters/investment/InvestmentsPlans";
 import SignalPage from "./components/masters/signal/Signal";
 import SignalsAdd from "./components/masters/signal/masterform/SignalsAdd";
+import AddMemberRankPage from "./pages/memberRanks/addmemberRank";
+import AddnewLetterPage from "./pages/newsletter/addnewLetterPage";
+import ListNewsletterPage from "./pages/newsletter/listNewsletterPage";
+import ListMemberRankPage from "./pages/memberRanks/listMemberrank";
+import GeneralSetting from "./pages/generalSetting";
 
 
 function App() {
@@ -153,6 +159,16 @@ function App() {
               <Route path="ext/forex/signal" element={<SignalPage />} />
               <Route path="add-ext/forex/signal" element={<SignalsAdd />} />
               <Route path="edit-ext/forex/signal/:id" element={<SignalsAdd />} />
+
+
+              {/* ===================MOIN Route Start======================= */}
+              <Route path="user-rank/create" element={<AddMemberRankPage />} />
+              <Route path="user-rank/list" element={<ListMemberRankPage />} />
+              <Route path="newsletter/create" element={<AddnewLetterPage />} />
+              <Route path="newsletter/list" element={<ListNewsletterPage />} />
+              <Route path="general-setting" element={<GeneralSetting />} />
+
+              {/* ===================MOIN Route End========================= */}
 
 
               <Route path="*" element={<PageNotFound />} />
