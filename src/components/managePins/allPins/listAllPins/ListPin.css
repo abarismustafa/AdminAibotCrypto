@@ -1,0 +1,13 @@
+.pin {
+    font-size: 12px;
+    font-weight: 700;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Make the PIN visible when the parent <td> is hovered */
+td:hover .pin {
+    visibility: visible;
+    opacity: 1;
+}

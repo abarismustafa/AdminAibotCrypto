@@ -45,6 +45,16 @@ import AddnewLetterPage from "./pages/newsletter/addnewLetterPage";
 import ListNewsletterPage from "./pages/newsletter/listNewsletterPage";
 import ListMemberRankPage from "./pages/memberRanks/listMemberrank";
 import GeneralSetting from "./pages/generalSetting";
+import ListAllPins from "./pages/managePins/allPins/listAllPins";
+import AddAllPins from "./pages/managePins/allPins/addAllPins";
+import AddlevelPage from "./pages/level/addLevelPage";
+import ListLevelPage from "./pages/level/listLevelPage";
+import AddPackagePage from "./pages/package/addPackagePage";
+import ListPackagePage from "./pages/package/listPackagePage";
+import AddLifeRewardPage from "./pages/lifeReward/addLifeRewardPage";
+import ListLifeRewardPage from "./pages/lifeReward/listLifeRewardPage";
+import AddAchievementPage from "./pages/achievement/addAchievementPage";
+import ListAchievementPage from "./pages/achievement/listAchievementPage";
 
 
 function App() {
@@ -167,6 +177,21 @@ function App() {
               <Route path="newsletter/create" element={<AddnewLetterPage />} />
               <Route path="newsletter/list" element={<ListNewsletterPage />} />
               <Route path="general-setting" element={<GeneralSetting />} />
+              <Route path="all-pins/list" element={<ListAllPins />} />
+              <Route path="all-pins/create" element={<AddAllPins />} />
+
+              <Route path="level/list" element={<ListLevelPage />} />
+              <Route path="level/create" element={<AddlevelPage />} />
+              <Route path="level/edit/:id" element={<AddlevelPage />} />
+              <Route path="package/create" element={<AddPackagePage />} />
+              <Route path="package/list" element={<ListPackagePage />} />
+              <Route path="package/edit/:id" element={<AddPackagePage />} />
+              <Route path="lifeReward/create" element={<AddLifeRewardPage />} />
+              <Route path="lifeReward/edit/:id" element={<AddLifeRewardPage />} />
+              <Route path="lifeReward/list" element={<ListLifeRewardPage />} />
+              <Route path="achievement/create" element={<AddAchievementPage />} />
+              <Route path="achievement/edit/:id" element={<AddAchievementPage />} />
+              <Route path="achievement/list" element={<ListAchievementPage />} />
 
               {/* ===================MOIN Route End========================= */}
 

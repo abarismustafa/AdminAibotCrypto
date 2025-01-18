@@ -1,4 +1,4 @@
-import { baseproductUrl, baseUrl, extraBaseUrl } from "../../baseUrl";
+import { aiBotBaseUrl, baseproductUrl, baseUrl, extraBaseUrl } from "../../baseUrl";
 import axiosInstance from "../../axiosServiseFactory/AxiosServiseFactory";
 import axios from "axios";
 import axiosInstance2 from "../../axiosServiseFactory/AxiosServiseFactoryProduct";
@@ -7157,6 +7157,171 @@ export const updatePurchaseQuotation = (data, id) => {
 export const deletePurchaseQuotation = (id) => {
   return axiosInstance.delete(
     `/quotation/purchaseQuotation/delete_type/${id}`,
+    {
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+      },
+    }
+  );
+};
+
+
+// =================================AiBot Apis===================================================
+export const getAllCurrencyList = (data) => {
+  return axiosInstance.get(`${baseUrl}currency/public`);
+};
+
+// =====Package======================
+export const postPackage = (data) => {
+  return axiosInstance.post(`/Mlm_Plan/addtype`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const updatePackage = (data, id) => {
+  return axiosInstance.put(`/Mlm_Plan/update_type/${id}`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const getPackageById = (id) => {
+  return axiosInstance.get(
+    `/Mlm_Plan/${id}`
+  );
+};
+export const getPackageData = (page, count) => {
+  return axiosInstance.get(
+    `/Mlm_Plan?page=${page}&count=${count}`
+  );
+};
+export const deletePackage = (id) => {
+  return axiosInstance.delete(
+    `/Mlm_Plan/delete_type/${id}`,
+    {
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+      },
+    }
+  );
+};
+
+// =====Level======================
+export const getAllPackageList = (data) => {
+  return axiosInstance.get(`${baseUrl}Mlm_Plan/public`);
+};
+
+export const postLevel = (data) => {
+  return axiosInstance.post(`/Mlmlevel/addtype`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const updateLevel = (data, id) => {
+  return axiosInstance.put(`/Mlmlevel/update_type/${id}`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const getLevelById = (id) => {
+  return axiosInstance.get(
+    `/Mlmlevel/${id}`
+  );
+};
+export const getLevelData = (page, count) => {
+  return axiosInstance.get(
+    `/Mlmlevel?page=${page}&count=${count}`
+  );
+};
+export const deleteLevel = (id) => {
+  return axiosInstance.delete(
+    `/Mlmlevel/delete_type/${id}`,
+    {
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+      },
+    }
+  );
+};
+
+// =========================Life reward==========================
+export const postLifeReward = (data) => {
+  return axiosInstance.post(`/MlmLifeReward/addtype`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const updateLifeReward = (data, id) => {
+  return axiosInstance.put(`/MlmLifeReward/update_type/${id}`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const getLifeRewardById = (id) => {
+  return axiosInstance.get(
+    `/MlmLifeReward/${id}`
+  );
+};
+export const getLifeRewardData = (page, count) => {
+  return axiosInstance.get(
+    `/MlmLifeReward?page=${page}&count=${count}`
+  );
+};
+export const deleteLifeReward = (id) => {
+  return axiosInstance.delete(
+    `/MlmLifeReward/delete_type/${id}`,
+    {
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+      },
+    }
+  );
+};
+// =========================Achievement==========================
+export const postAchievement = (data) => {
+  return axiosInstance.post(`/Mlm_Achivement/addtype`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const updateAchievement = (data, id) => {
+  return axiosInstance.put(`/Mlm_Achivement/update_type/${id}`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+export const getAchievementById = (id) => {
+  return axiosInstance.get(
+    `/Mlm_Achivement/${id}`
+  );
+};
+export const getAchievementData = (page, count) => {
+  return axiosInstance.get(
+    `/Mlm_Achivement?page=${page}&count=${count}`
+  );
+};
+export const deleteAchievement = (id) => {
+  return axiosInstance.delete(
+    `/Mlm_Achivement/delete_type/${id}`,
     {
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
