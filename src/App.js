@@ -62,7 +62,7 @@ import ListLifeRewardPage from "./pages/lifeReward/listLifeRewardPage";
 import AddAchievementPage from "./pages/achievement/addAchievementPage";
 import ListAchievementPage from "./pages/achievement/listAchievementPage";
 import CustomerActivateDeavtivatePage from "./pages/customer/activateDeactivatePage";
-import DistributorSearchPage from "./pages/distributorSearchPage";
+// import DistributorSearchPage from "./pages/distributorSearchPage";
 import ProductWiseReportPage from "./pages/reports/productWiseReportPage";
 import DirectReferralsPage from "./pages/directReferralsPage";
 import DownloadDataPage from "./pages/downloadDataPage";
@@ -80,6 +80,7 @@ import DownlineTeamPage from "./pages/downlineTeamPage";
 import LeftMemberPage from "./pages/leftMemberPage";
 import RightMemberPage from "./pages/rightMemberPage";
 import MainWalletReportPage from "./pages/reports/mainWalletReportPage";
+import DistributorSearchPage from "./pages/distributorSearchPage";
 
 
 function App() {
