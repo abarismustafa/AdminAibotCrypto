@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Breadcrumbs from '../../../common/breadcrumb/Breadcrumbs';
-import { ToastContainer } from 'react-bootstrap';
 import Loadar from '../../../common/loader/Loader';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import { getAllPackageList, getLevelById, postLevel, updateLevel } from '../../../api/login/Login';
 

@@ -19,6 +19,7 @@ function AddPackage() {
         MatchBonus: "",
         ReferIncome: "",
         levelincome: "",
+        earnUpto: "",
         isActive: "",
     });
     const [allCurrenncyD, setAllCurrencyD] = useState();
@@ -50,6 +51,9 @@ function AddPackage() {
         }
         if (!formData.levelincome) {
             errors.levelincome = "Level Income is required.";
+        }
+        if (!formData.earnUpto) {
+            errors.earnUpto = "Earn Upto is required.";
         }
         // if (!formData.TaxPrice) {
         //     errors.TaxPrice = "Tax Price is required.";
@@ -243,6 +247,37 @@ function AddPackage() {
                                             <div className="text-danger mt-1">{errors.levelincome}</div>
                                         )}
                                     </div>
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="earnUpto" className="form-label">
+                                            Earn Upto <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="earnUpto"
+                                            className="form-control"
+                                            placeholder="Enter Earn Upto"
+                                            value={formData?.earnUpto}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.earnUpto && (
+                                            <div className="text-danger mt-1">{errors.earnUpto}</div>
+                                        )}
+                                    </div>
+
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="isActive" className="form-label">
+                                            IsActive <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <select className="form-select form-control" aria-label="Default select example" name="isActive" value={formData?.isActive}
+                                            onChange={handleChange}>
+                                            <option selected>Select IsActive</option>
+                                            <option value={true}>True</option>
+                                            <option value={false}>False</option>
+                                        </select>
+                                        {errors.isActive && (
+                                            <div className="text-danger mt-1">{errors.isActive}</div>
+                                        )}
+                                    </div>
 
                                     <div className='col-lg-12'>
                                         <button type='button' onClick={handleAddRow} className='btn btn-success float-end me-0'>Add Row</button>
@@ -313,11 +348,11 @@ function AddPackage() {
                                                     onChange={(e) => handleRowsChange(index, "Currency_id", e.target.value)}
                                                 >
                                                     <option value="">Select Currency</option>
-                                                    <option value={"USD"}>USD</option>
-                                                    <option value={"INR"}>INR</option>
-                                                    {/* {allCurrenncyD && allCurrenncyD?.map((item, i) => {
-                                                        return <option key={i} value={item?._id}>{item?.name}</option>
-                                                    })} */}
+                                                    {/* <option value={"USD"}>USD</option>
+                                                    <option value={"INR"}>INR</option> */}
+                                                    {allCurrenncyD && allCurrenncyD?.map((item, i) => {
+                                                        return <option key={i} value={item?._id}>{item?.currency_code}</option>
+                                                    })}
                                                 </select>
                                                 {errors.Currency_id && (
                                                     <div className="text-danger mt-1">{errors.Currency_id}</div>
@@ -350,20 +385,6 @@ function AddPackage() {
 
 
 
-                                    <div className="col-lg-6 mb-4">
-                                        <label htmlFor="isActive" className="form-label">
-                                            IsActive <span style={{ color: 'red' }}>*</span>
-                                        </label>
-                                        <select className="form-select form-control" aria-label="Default select example" name="isActive" value={formData?.isActive}
-                                            onChange={handleChange}>
-                                            <option selected>Select IsActive</option>
-                                            <option value={"True"}>True</option>
-                                            <option value={"False"}>False</option>
-                                        </select>
-                                        {errors.isActive && (
-                                            <div className="text-danger mt-1">{errors.isActive}</div>
-                                        )}
-                                    </div>
 
 
                                     <div className="col-xl-12 text-center mt-4">
