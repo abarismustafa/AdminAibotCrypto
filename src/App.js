@@ -39,6 +39,12 @@ import DurationAdds from "./components/masters/duration/masterform/DurationAdds"
 import InvestmentsPlans from "./components/masters/investment/InvestmentsPlans";
 import SignalPage from "./components/masters/signal/Signal";
 import SignalsAdd from "./components/masters/signal/masterform/SignalsAdd";
+import DashboardAiBoatPage from "./pages/aidashbord/Index";
+import LevelIncome from "./components/masters/levelincome/LevelIncome";
+import HouseLevel from "./components/masters/houselevel/HouseLevel";
+import PayoutStatment from "./components/masters/statement/PayoutStatment";
+import MemberDetailsForm from "./components/masters/epins/GenerateEpin";
+import RequestedEpinPage from "./components/masters/RequestedEpin/RequestedEpinPage";
 
 
 function App() {
@@ -128,7 +134,8 @@ function App() {
             >
               {/* <Route path={`${location?.pathname}`} element={<DasBoardRight />} /> */}
               <Route path={`contest_dashboard`} element={<DasBoardRight />} />
-              <Route path={`lead_dashboard`} element={<DashboardLeadPage />} />
+              {/* <Route path={`lead_dashboard`} element={<DashboardLeadPage />} /> */}
+              <Route path={`lead_dashboard`} element={<DashboardAiBoatPage />} />
               <Route path='investment' element={<InvesmentPage />} />
               <Route path='investment-analysis' element={<InvesmentAdd />} />
               <Route path='duration' element={<DurationPage />} />
@@ -154,6 +161,11 @@ function App() {
               <Route path="add-ext/forex/signal" element={<SignalsAdd />} />
               <Route path="edit-ext/forex/signal/:id" element={<SignalsAdd />} />
 
+              <Route path="aibot/level-income" element={<LevelIncome />} />
+              <Route path="aibot/house-level-income" element={<HouseLevel />} />
+              <Route path="aibot/payoutstatment" element={<PayoutStatment />} />
+              <Route path="aibot/generateEpin" element={<MemberDetailsForm />} />
+              <Route path="aibot/RequestedEpin" element={<RequestedEpinPage />} />
 
               <Route path="*" element={<PageNotFound />} />
             </Route>
