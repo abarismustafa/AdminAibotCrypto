@@ -5,6 +5,7 @@ import "./assets/css/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.min.js";
 // import "./assets/css/style.css";
 import "./common/CustomInputField/index.module.scss";
 import "./assets/css/project.css"
@@ -45,6 +46,21 @@ import HouseLevel from "./components/masters/houselevel/HouseLevel";
 import PayoutStatment from "./components/masters/statement/PayoutStatment";
 import MemberDetailsForm from "./components/masters/epins/GenerateEpin";
 import RequestedEpinPage from "./components/masters/RequestedEpin/RequestedEpinPage";
+import AddMemberRankPage from "./pages/memberRanks/addmemberRank";
+import AddnewLetterPage from "./pages/newsletter/addnewLetterPage";
+import ListNewsletterPage from "./pages/newsletter/listNewsletterPage";
+import ListMemberRankPage from "./pages/memberRanks/listMemberrank";
+import GeneralSetting from "./pages/generalSetting";
+import ListAllPins from "./pages/managePins/allPins/listAllPins";
+import AddAllPins from "./pages/managePins/allPins/addAllPins";
+import AddlevelPage from "./pages/level/addLevelPage";
+import ListLevelPage from "./pages/level/listLevelPage";
+import AddPackagePage from "./pages/package/addPackagePage";
+import ListPackagePage from "./pages/package/listPackagePage";
+import AddLifeRewardPage from "./pages/lifeReward/addLifeRewardPage";
+import ListLifeRewardPage from "./pages/lifeReward/listLifeRewardPage";
+import AddAchievementPage from "./pages/achievement/addAchievementPage";
+import ListAchievementPage from "./pages/achievement/listAchievementPage";
 
 
 function App() {
@@ -166,6 +182,31 @@ function App() {
               <Route path="aibot/payoutstatment" element={<PayoutStatment />} />
               <Route path="aibot/generateEpin" element={<MemberDetailsForm />} />
               <Route path="aibot/RequestedEpin" element={<RequestedEpinPage />} />
+
+              {/* ===================MOIN Route Start======================= */}
+              <Route path="user-rank/create" element={<AddMemberRankPage />} />
+              <Route path="user-rank/list" element={<ListMemberRankPage />} />
+              <Route path="newsletter/create" element={<AddnewLetterPage />} />
+              <Route path="newsletter/list" element={<ListNewsletterPage />} />
+              <Route path="general-setting" element={<GeneralSetting />} />
+              <Route path="all-pins/list" element={<ListAllPins />} />
+              <Route path="all-pins/create" element={<AddAllPins />} />
+
+              <Route path="level/list" element={<ListLevelPage />} />
+              <Route path="level/create" element={<AddlevelPage />} />
+              <Route path="level/edit/:id" element={<AddlevelPage />} />
+              <Route path="package/create" element={<AddPackagePage />} />
+              <Route path="package/list" element={<ListPackagePage />} />
+              <Route path="package/edit/:id" element={<AddPackagePage />} />
+              <Route path="lifeReward/create" element={<AddLifeRewardPage />} />
+              <Route path="lifeReward/edit/:id" element={<AddLifeRewardPage />} />
+              <Route path="lifeReward/list" element={<ListLifeRewardPage />} />
+              <Route path="achievement/create" element={<AddAchievementPage />} />
+              <Route path="achievement/edit/:id" element={<AddAchievementPage />} />
+              <Route path="achievement/list" element={<ListAchievementPage />} />
+
+              {/* ===================MOIN Route End========================= */}
+
 
               <Route path="*" element={<PageNotFound />} />
             </Route>
