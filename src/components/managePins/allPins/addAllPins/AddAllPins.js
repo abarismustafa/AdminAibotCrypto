@@ -13,8 +13,8 @@ function AddAllPinsComp() {
     const [formData, setFormData] = useState({
         amount: "",
         totalPins: "",
-        package_name: "",
-        currency: "",
+        // package_name: "",
+        // currency: "",
     });
 
     const [errors, setErrors] = useState({});
@@ -43,12 +43,12 @@ function AddAllPinsComp() {
         } else if (formData.totalPins <= 0) {
             errors.totalPins = "Total number of pins must be greater than zero.";
         }
-        if (!formData.package_name) {
-            errors.package_name = "Package Name is required.";
-        }
-        if (!formData.currency) {
-            errors.currency = "Currency is required.";
-        }
+        // if (!formData.package_name) {
+        //     errors.package_name = "Package Name is required.";
+        // }
+        // if (!formData.currency) {
+        //     errors.currency = "Currency is required.";
+        // }
 
         return errors;
     };
@@ -68,46 +68,6 @@ function AddAllPinsComp() {
     return (
         <>
             <Breadcrumbs breadCrumbsTitle={breadCrumbsTitle} />
-
-            {/* <div style={{ margin: "14px" }}>
-                <div className="card">
-                    <div className="card-body p-0">
-                        <div className="table-responsive active-projects style-1">
-                            <div className="tbl-caption tbl-caption-2">
-                                <h4 className="heading mb-0 p-2">Add New Pin</h4>
-                            </div>
-                            <form className="tbl-captionn">
-                                <div className="row mt-2">
-
-                                    <div className="col-lg-6 mb-4">
-                                        <label for="exampleFormControlInput1" class="form-label">Amount</label>
-                                        <input
-                                            type="number"
-                                            className="form-control"
-                                            placeholder="Enter Amount"
-                                        />
-                                    </div>
-                                    <div className="col-lg-6 mb-4">
-                                        <label for="exampleFormControlInput1" class="form-label">Total Number of Pin</label>
-                                        <input
-                                            type="number"
-                                            className="form-control"
-                                            placeholder="Enter Total Number of Pin"
-                                        />
-                                    </div>
-
-                                    <div className="col-xl-12 text-center mt-4">
-                                        <button type="button" className="btn btn-primary float-end me-0">
-                                            Submit
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
 
             <div style={{ margin: "14px" }}>
                 <div className="card">
@@ -150,7 +110,7 @@ function AddAllPinsComp() {
                                             <div className="text-danger mt-1">{errors.totalPins}</div>
                                         )}
                                     </div>
-                                    <div className="col-lg-6 mb-4">
+                                    {/* <div className="col-lg-6 mb-4">
                                         <label htmlFor="package_name" className="form-label">
                                             Package Name <span style={{ color: 'red' }}>*</span>
                                         </label>
@@ -179,7 +139,7 @@ function AddAllPinsComp() {
                                         {errors.currency && (
                                             <div className="text-danger mt-1">{errors.currency}</div>
                                         )}
-                                    </div>
+                                    </div> */}
                                     <div className="col-xl-12 text-center mt-4">
                                         <button
                                             type="submit"

@@ -61,6 +61,26 @@ import AddLifeRewardPage from "./pages/lifeReward/addLifeRewardPage";
 import ListLifeRewardPage from "./pages/lifeReward/listLifeRewardPage";
 import AddAchievementPage from "./pages/achievement/addAchievementPage";
 import ListAchievementPage from "./pages/achievement/listAchievementPage";
+import CustomerActivateDeavtivatePage from "./pages/customer/activateDeactivatePage";
+// import DistributorSearchPage from "./pages/distributorSearchPage";
+import ProductWiseReportPage from "./pages/reports/productWiseReportPage";
+import DirectReferralsPage from "./pages/directReferralsPage";
+import DownloadDataPage from "./pages/downloadDataPage";
+
+import LanguagePage from "./pages/language";
+import FormLanguage from "./components/language/formLanguage.js/FormLanguage";
+import CurrencyPage from "./pages/currency";
+import CurrencyForm from "./components/currency/CurrencyForm";
+
+import CompanyMasters from "./pages/companyMasters";
+import CompanyFormMaster from "./components/topNavigationComp/masters/companyMaster/companyFormMaster/CompanyFormMaster";
+import CompanyTypeMasters from "./pages/companyTypeMaster";
+import CompanyTypeMasterForm from "./components/topNavigationComp/masters/companyTypeMaster/companyTypeMasterForm/CompanyTypeMasterForm";
+import DownlineTeamPage from "./pages/downlineTeamPage";
+import LeftMemberPage from "./pages/leftMemberPage";
+import RightMemberPage from "./pages/rightMemberPage";
+import MainWalletReportPage from "./pages/reports/mainWalletReportPage";
+import DistributorSearchPage from "./pages/distributorSearchPage";
 
 
 function App() {
@@ -204,6 +224,53 @@ function App() {
               <Route path="achievement/create" element={<AddAchievementPage />} />
               <Route path="achievement/edit/:id" element={<AddAchievementPage />} />
               <Route path="achievement/list" element={<ListAchievementPage />} />
+
+
+              <Route path="cutomer/activate/deactivate" element={<CustomerActivateDeavtivatePage />} />
+              <Route path="distributor/search" element={<DistributorSearchPage />} />
+              <Route path="product-wise/report" element={<ProductWiseReportPage />} />
+              <Route path="direct-referrals" element={<DirectReferralsPage />} />
+              <Route path="download/data" element={<DownloadDataPage />} />
+              <Route path="downline-team" element={<DownlineTeamPage />} />
+              <Route path="left-member" element={<LeftMemberPage />} />
+              <Route path="right-member" element={<RightMemberPage />} />
+              <Route path="main-wallet/report" element={<MainWalletReportPage />} />
+
+
+
+              <Route path="language" element={<LanguagePage />} />
+              <Route path="add-language" element={<FormLanguage />} />
+              <Route path="update_language/:id" element={<FormLanguage />} />
+              <Route path="currency" element={<CurrencyPage />} />
+              <Route path="add-currency" element={<CurrencyForm />} />
+              <Route path="update-currency/:id" element={<CurrencyForm />} />
+              <Route
+                path="/company-master"
+                element={<CompanyMasters />}
+              />
+              <Route
+                path="/create_company-master"
+                element={<CompanyFormMaster />}
+              />
+              <Route
+                path="/update-company-master/:id"
+                element={<CompanyFormMaster />}
+              />
+              <Route
+                path="/company-type-master"
+                element={<CompanyTypeMasters />}
+              />
+              <Route
+                path="/create_company-type-master"
+                element={<CompanyTypeMasterForm />}
+              />
+              <Route
+                path="/update_company-type-master/:id"
+                element={<CompanyTypeMasterForm />}
+              />
+
+
+
 
               {/* ===================MOIN Route End========================= */}
 

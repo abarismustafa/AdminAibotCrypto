@@ -97,6 +97,7 @@ function ListPackage() {
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Package Name</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Referral Income</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Level Income</th>
+                                                    <th style={{ width: '150px', textAlign: 'center' }}>IsActive</th>
                                                     <th style={{ width: '150px' }}>Action</th>
                                                 </tr>
                                             </thead>
@@ -107,7 +108,9 @@ function ListPackage() {
                                                         <td valign="top" className="dataTables_empty" >{item?.name}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.ReferIncome}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.levelincome}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.isActive == true ? 'Active' : 'InActive'}</td>
+                                                        <td valign="top" className="dataTables_empty" >
+                                                            <span style={{ border: '1px solid black', padding: '2px 6px', borderRadius: '5px', backgroundColor: item?.isActive == true ? 'green' : 'red', color: 'white', width: '80px', display: 'inline-block' }}>{item?.isActive == true ? 'Active' : 'InActive'}</span>
+                                                        </td>
                                                         <td>
                                                             <div className="d-flex">
                                                                 <Link to={`/package/edit/${item?._id}`} className="btn btn-primary shadow btn-xs sharp me-1">
