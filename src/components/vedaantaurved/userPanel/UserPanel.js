@@ -63,14 +63,13 @@ const WelcomeLetter = () => {
 
             <main>
                 <div className='card'>
-                    {/* <p>15/06/2021</p> */}
                     <p>{welcomeData?.onBoardDate}</p>
                     {state?.name ? <p><strong>My Dear Mr. {welcomeData?.name},</strong></p> : <p><strong>""</strong></p>}
                     <p>
                         Congratulations! You have successfully registered with {state?.name ? <strong>{state?.name}</strong> : <strong>""</strong>}.
                         Welcome to  {state?.name ? <strong>{`${state?.name} India Family`}</strong> : <strong>""</strong>} , a team of stout-hearted professionals! You are joining a
                         revolution in the Era of Wellness as a Member who would utilize {state?.name ? <strong>{state?.name}</strong> : <strong>""</strong>}'s unique
-                        Organic and Natural Products for their own good health and financial prosperity. Your Member ID is VARoot.
+                        Organic and Natural Products for their own good health and financial prosperity. Your Member ID is {params?.id}.
                     </p>
                     <p>
                         <strong>What will you achieve?</strong>

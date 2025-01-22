@@ -9,7 +9,7 @@ import BroadCasterModal from "../distributerList/broadCasterModal/BroadCasterMod
 function DisterbuterFIlter({ dynemicFields, submitForm, initialValues, params, getReailerDistIdAgainst, selectedUsers, setSelectedUsers }) {
     const todayDate = () => {
         const today = new Date();
-        return today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+        return today.toISOString().split('T')[0]; 
     };
 
     const [formData, setFormData] = useState({
@@ -26,7 +26,6 @@ function DisterbuterFIlter({ dynemicFields, submitForm, initialValues, params, g
     const [error, setError] = useState('');
     const [isSearchDisabled, setIsSearchDisabled] = useState(false);
     const [showbroadcast, setShowbroadcast] = useState(false);
-    // const [selectedUsers, setSelectedUsers] = useState([]);
     const [modalShow, setModalShow] = useState(false);
     useEffect(() => {
         setFormData({
@@ -223,11 +222,7 @@ function DisterbuterFIlter({ dynemicFields, submitForm, initialValues, params, g
                                             classNamePrefix="select"
                                             placeholder="Select Streams"
                                         />
-                                        {/* {errors.stream_id && touched.stream_id ? (
-                                            <small className="error-cls">
-                                                {errors.stream_id}
-                                            </small>
-                                        ) : null} */}
+                                       
                                     </div>
                                     <div className="col-xl-2 mb-3">
                                         <label >{dynemicFields?.field_one}</label>
@@ -241,11 +236,7 @@ function DisterbuterFIlter({ dynemicFields, submitForm, initialValues, params, g
                                             classNamePrefix="select"
                                             placeholder="Select Course"
                                         />
-                                        {/* {errors.stream_id && touched.stream_id ? (
-                                            <small className="error-cls">
-                                                {errors.stream_id}
-                                            </small>
-                                        ) : null} */}
+                                      
                                     </div>
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPencilAlt } from "react-icons/fa"; // Importing the edit icon
+import { FaPencilAlt } from "react-icons/fa"; 
 
 function LeadInformation() {
   const [formData, setFormData] = useState({
@@ -19,7 +19,6 @@ function LeadInformation() {
     cpName: "",
   });
 
-  // State to manage individual edit mode for each input field
   const [isEditMode, setIsEditMode] = useState({
     name: false,
     assignedTo: false,
@@ -59,7 +58,6 @@ function LeadInformation() {
           <div className="card p-3">
             <form onSubmit={handleSubmit}>
 
-              {/* Name Field */}
               <div className="mb-2">
                 <label>
                   <strong>Name:</strong>
@@ -81,7 +79,6 @@ function LeadInformation() {
                 </div>
               </div>
 
-              {/* AssignedTo Field */}
               <div className="mb-2">
                 <label>
                   <strong>Assigned To:</strong>
@@ -103,7 +100,6 @@ function LeadInformation() {
                 </div>
               </div>
 
-              {/* MobilePhone Field */}
               <div className="mb-2">
                 <label>
                   <strong>Mobile Phone:</strong>
@@ -125,7 +121,6 @@ function LeadInformation() {
                 </div>
               </div>
 
-              {/* AltPhone Field */}
               <div className="mb-2">
                 <label>
                   <strong>Alternate Phone:</strong>
@@ -147,7 +142,6 @@ function LeadInformation() {
                 </div>
               </div>
 
-              {/* Email Field */}
               <div className="mb-2">
                 <label>
                   <strong>Email:</strong>
@@ -168,8 +162,6 @@ function LeadInformation() {
                   />
                 </div>
               </div>
-
-              {/* Secondary Email Field */}
               <div className="mb-2">
                 <label>
                   <strong>Secondary Email:</strong>
@@ -191,7 +183,6 @@ function LeadInformation() {
                 </div>
               </div>
 
-              {/* Lead Source Field */}
               <div className="mb-2">
                 <label>
                   <strong>Lead Source:</strong>
@@ -213,7 +204,6 @@ function LeadInformation() {
                 </div>
               </div>
 
-              {/* Lead Status Field */}
               <div className="mb-2">
                 <label>
                   <strong>Lead Status:</strong>
@@ -235,7 +225,6 @@ function LeadInformation() {
                 </div>
               </div>
 
-              {/* Submit Button */}
               <button type="submit" className="btn btn-success mt-3">
                 Submit
               </button>

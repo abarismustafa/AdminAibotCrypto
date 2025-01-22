@@ -14,8 +14,6 @@ function CallsCompo() {
             const res = await getCallList(parems?.id)
             console.log(res.data);
             
-            // setcallList(res.data)
-            // dispatch(setCalls(res.data.length));
         } catch (error) {
 
         }

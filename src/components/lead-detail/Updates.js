@@ -2,7 +2,7 @@
 // Timeline.js
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaUser } from "react-icons/fa"; // For user icon
+import { FaUser } from "react-icons/fa"; 
 
 const Updates = () => {
   const events = [

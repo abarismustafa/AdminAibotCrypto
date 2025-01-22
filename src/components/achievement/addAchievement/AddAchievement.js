@@ -152,6 +152,40 @@ function AddAchievement() {
                             </div>
                             <form className="tbl-captionn" onSubmit={handleSubmit}>
                                 <div className="row mt-2">
+
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="plan_id" className="form-label">
+                                            Choose Package <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
+                                            onChange={handleChange}>
+                                            <option selected>Select Package</option>
+                                            {allPackageD && allPackageD?.map((item, i) => {
+                                                return <option key={i} value={item?._id}>{item?.name}</option>
+                                            })}
+                                        </select>
+                                        {errors.plan_id && (
+                                            <div className="text-danger mt-1">{errors.plan_id}</div>
+                                        )}
+                                    </div>
+
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="name" className="form-label">
+                                            Direct Members/Referrals Of Required <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            className="form-control"
+                                            placeholder="Enter Direct Members/Referrals Of Required"
+                                            value={formData?.name}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.name && (
+                                            <div className="text-danger mt-1">{errors.name}</div>
+                                        )}
+                                    </div>
+
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="name" className="form-label">
                                             Name <span style={{ color: 'red' }}>*</span>
@@ -168,15 +202,33 @@ function AddAchievement() {
                                             <div className="text-danger mt-1">{errors.name}</div>
                                         )}
                                     </div>
+
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="duration_type" className="form-label">
+                                            Payment Per (Daily/Weekly/Monthly) <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <select className="form-select form-control" aria-label="Default select example" name="duration_type" value={formData?.duration_type}
+                                            onChange={handleChange}>
+                                            <option selected>Select Payment Per</option>
+                                            <option value={"Days"}>Days</option>
+                                            <option value={"Week"}>Week</option>
+                                            <option value={"Months"}>Months</option>
+                                            <option value={"Years"}>Years</option>
+                                        </select>
+                                        {errors.duration_type && (
+                                            <div className="text-danger mt-1">{errors.duration_type}</div>
+                                        )}
+                                    </div>
+
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="reward" className="form-label">
-                                            Reward <span style={{ color: 'red' }}>*</span>
+                                            Fast Achievement Bonous Income Amount <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="reward"
                                             className="form-control"
-                                            placeholder="Enter reward"
+                                            placeholder="Enter Fast Achievement Bonous Income Amount"
                                             value={formData?.reward}
                                             onChange={handleChange}
                                         />
@@ -205,7 +257,7 @@ function AddAchievement() {
                                             No Of Days <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
-                                            type="date"
+                                            type="number"
                                             name="no_of_days"
                                             className="form-control"
                                             placeholder="Enter No Of Days"
@@ -217,24 +269,90 @@ function AddAchievement() {
                                         )}
                                     </div>
 
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="earnUpto" className="form-label">
+                                            Earn Upto <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="earnUpto"
+                                            className="form-control"
+                                            placeholder="Enter  Earn Upto"
+                                            value={formData?.earnUpto}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.earnUpto && (
+                                            <div className="text-danger mt-1">{errors.earnUpto}</div>
+                                        )}
+                                    </div>
 
                                     <div className="col-lg-6 mb-4">
-                                        <label htmlFor="plan_id" className="form-label">
-                                            Package <span style={{ color: 'red' }}>*</span>
+                                        <label htmlFor="duration_type" className="form-label">
+                                            Payment Per (Daily/Weekly/Monthly) <span style={{ color: 'red' }}>*</span>
                                         </label>
-                                        <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
+                                        <select className="form-select form-control" aria-label="Default select example" name="duration_type" value={formData?.duration_type}
                                             onChange={handleChange}>
-                                            <option selected>Select Package</option>
-                                            {allPackageD && allPackageD?.map((item, i) => {
-                                                return <option key={i} value={item?._id}>{item?.name}</option>
-                                            })}
+                                            <option selected>Select Payment Per</option>
+                                            <option value={"Days"}>Days</option>
+                                            <option value={"Week"}>Week</option>
+                                            <option value={"Months"}>Months</option>
+                                            <option value={"Years"}>Years</option>
                                         </select>
-                                        {errors.plan_id && (
-                                            <div className="text-danger mt-1">{errors.plan_id}</div>
+                                        {errors.duration_type && (
+                                            <div className="text-danger mt-1">{errors.duration_type}</div>
+                                        )}
+                                    </div>
+
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="duration" className="form-label">
+                                            Minimum Direct/Referral Members Required <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            name="duration"
+                                            className="form-control"
+                                            placeholder="Enter Minimum Direct/Referral Members Required"
+                                            value={formData?.duration}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.duration && (
+                                            <div className="text-danger mt-1">{errors.duration}</div>
+                                        )}
+                                    </div>
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="duration" className="form-label">
+                                            Bot Matching Required <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            name="duration"
+                                            className="form-control"
+                                            placeholder="Enter Bot Matching Required"
+                                            value={formData?.duration}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.duration && (
+                                            <div className="text-danger mt-1">{errors.duration}</div>
                                         )}
                                     </div>
 
 
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="duration" className="form-label">
+                                            Targeted Duration Required (In Days) <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            name="duration"
+                                            className="form-control"
+                                            placeholder="Enter Duration in Days"
+                                            value={formData?.duration}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.duration && (
+                                            <div className="text-danger mt-1">{errors.duration}</div>
+                                        )}
+                                    </div>
 
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="isActive" className="form-label">

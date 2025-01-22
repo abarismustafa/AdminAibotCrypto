@@ -149,6 +149,23 @@ function AddLevel() {
                             <form className="tbl-captionn" onSubmit={handleSubmit}>
                                 <div className="row mt-2">
                                     <div className="col-lg-6 mb-4">
+                                        <label htmlFor="plan_id" className="form-label">
+                                            Choose Package <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
+                                            onChange={handleChange}>
+                                            <option selected>Select Package</option>
+                                            {/* <option value={"Percent"}>Abc</option>
+                                            <option value={"Flat"}>Def</option> */}
+                                            {allPackageD && allPackageD?.map((item, i) => {
+                                                return <option key={i} value={item?._id}>{item?.name}</option>
+                                            })}
+                                        </select>
+                                        {errors.plan_id && (
+                                            <div className="text-danger mt-1">{errors.plan_id}</div>
+                                        )}
+                                    </div>
+                                    <div className="col-lg-6 mb-4">
                                         <label htmlFor="Level" className="form-label">
                                             Level <span style={{ color: 'red' }}>*</span>
                                         </label>
@@ -166,13 +183,13 @@ function AddLevel() {
                                     </div>
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="Reward" className="form-label">
-                                            Reward <span style={{ color: 'red' }}>*</span>
+                                            Income Amount <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="Reward"
                                             className="form-control"
-                                            placeholder="Enter Reward"
+                                            placeholder="Enter Income Amount"
                                             value={formData?.Reward}
                                             onChange={handleChange}
                                         />
@@ -182,13 +199,13 @@ function AddLevel() {
                                     </div>
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="No_of_match" className="form-label">
-                                            No Of Match <span style={{ color: 'red' }}>*</span>
+                                            Direct Members/Referral Required <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="No_of_match"
                                             className="form-control"
-                                            placeholder="Enter No Of Match"
+                                            placeholder="Enter Direct Members/Referral Required"
                                             value={formData?.No_of_match}
                                             onChange={handleChange}
                                         />
@@ -196,23 +213,7 @@ function AddLevel() {
                                             <div className="text-danger mt-1">{errors.No_of_match}</div>
                                         )}
                                     </div>
-                                    <div className="col-lg-6 mb-4">
-                                        <label htmlFor="plan_id" className="form-label">
-                                            Package <span style={{ color: 'red' }}>*</span>
-                                        </label>
-                                        <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
-                                            onChange={handleChange}>
-                                            <option selected>Select Package</option>
-                                            {/* <option value={"Percent"}>Abc</option>
-                                            <option value={"Flat"}>Def</option> */}
-                                            {allPackageD && allPackageD?.map((item, i) => {
-                                                return <option key={i} value={item?._id}>{item?.name}</option>
-                                            })}
-                                        </select>
-                                        {errors.plan_id && (
-                                            <div className="text-danger mt-1">{errors.plan_id}</div>
-                                        )}
-                                    </div>
+
 
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="isActive" className="form-label">

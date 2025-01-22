@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { FaPencilAlt } from "react-icons/fa"; // Importing the edit icon
+import { FaPencilAlt } from "react-icons/fa";
 
 function SystematicInfo() {
-  // State to hold form data
   const [formData, setFormData] = useState({
     entityId: "",
     callId: "",
@@ -15,7 +14,6 @@ function SystematicInfo() {
     leadNumber: "",
   });
 
-  // State to manage individual edit mode for each field
   const [isEditMode, setIsEditMode] = useState({
     entityId: false,
     callId: false,
@@ -27,23 +25,18 @@ function SystematicInfo() {
     modifiedBy: false,
     leadNumber: false,
   });
-
-  // Handle form data change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Toggle edit mode for a specific field
   const toggleEditMode = (field) => {
     setIsEditMode((prev) => ({ ...prev, [field]: !prev[field] }));
   };
 
-  // Handle form submission (or other actions)
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data updated:", formData);
-    // After submission, disable all fields
     setIsEditMode({
       entityId: false,
       callId: false,
@@ -64,7 +57,6 @@ function SystematicInfo() {
           <div className="card p-3">
             <form onSubmit={handleSubmit}>
               <div className="row">
-                {/* Entity ID */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Entity id *: </strong>
@@ -92,7 +84,6 @@ function SystematicInfo() {
                   </div>
                 </div>
 
-                {/* Call ID */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Call ID: </strong>
@@ -120,7 +111,6 @@ function SystematicInfo() {
                   </div>
                 </div>
 
-                {/* Feedback */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Feedback: </strong>
@@ -147,8 +137,6 @@ function SystematicInfo() {
                     />
                   </div>
                 </div>
-
-                {/* Live */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Live: </strong>
@@ -179,7 +167,6 @@ function SystematicInfo() {
                   </div>
                 </div>
 
-                {/* Created Time */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Created Time: </strong>
@@ -207,7 +194,6 @@ function SystematicInfo() {
                   </div>
                 </div>
 
-                {/* Created By */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Created By: </strong>
@@ -234,8 +220,6 @@ function SystematicInfo() {
                     />
                   </div>
                 </div>
-
-                {/* Modified Time */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Modified Time: </strong>
@@ -263,7 +247,6 @@ function SystematicInfo() {
                   </div>
                 </div>
 
-                {/* Modified By */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Modified By: </strong>
@@ -291,7 +274,6 @@ function SystematicInfo() {
                   </div>
                 </div>
 
-                {/* Lead Number */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Lead Number *: </strong>
@@ -318,8 +300,6 @@ function SystematicInfo() {
                     />
                   </div>
                 </div>
-
-                {/* Submit Button */}
                 {Object.values(isEditMode).some((mode) => mode) && (
                   <button type="submit" className="btn btn-success mt-3">
                     Submit

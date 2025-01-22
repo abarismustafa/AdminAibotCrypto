@@ -1,5 +1,5 @@
-import { Link, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { useState } from "react"
 import Loadar from "../../../common/loader/Loader";
 import Dropdown from 'react-bootstrap/Dropdown';
 import FundTransfer from "../createUserDistributer/fundTrnsfer/FundTrnasfer";
@@ -154,7 +154,6 @@ function DistributerList({ dynemicFields, loading, params, state, handleChange, 
                                                         <td>{item?.name}</td>
                                                         <td>---</td>
                                                         <td>---</td>
-                                                        {/* <td className="sorting_1">{item?._id}</td> */}
                                                         <td>{item?.mobile}</td>
 
                                                         <td>{item?.email}</td>
@@ -166,16 +165,11 @@ function DistributerList({ dynemicFields, loading, params, state, handleChange, 
                                                         </td>
 
                                                         <td className="p-0">
-                                                            {/* <span className="badge badge-success light border-0" onChange={() => { handleApproval('active') }}>{activeState ? "Inactive" : "Active"}</span> */}
-                                                            {/* <span className="badge badge-success light"> */}
-                                                            {/* <div className="col-lg-4"> */}
                                                             <select className="form-select py-0 " aria-label="Default select example" value={item?.is_approved} name="is_approved" onChange={(e) => handleChange(e, item?._id)} style={{ width: "150px" }}>
                                                                 <option>Status</option>
                                                                 <option value={"true"}>Approved</option>
                                                                 <option value={"false"}>Not Approved</option>
                                                             </select>
-                                                            {/* </div> */}
-                                                            {/* </span> */}
                                                         </td>
 
                                                         <td style={{ position: 'relative' }} className="d-flex align-item-center" >
@@ -188,7 +182,6 @@ function DistributerList({ dynemicFields, loading, params, state, handleChange, 
                                                                 <Dropdown.Menu>
                                                                     <Dropdown.Item Link="#" onClick={() => { sendatas(item) }}>Fund Transfer / Return</Dropdown.Item>
                                                                     <Dropdown.Item href="/admin/certificate" >BC Authorization Letter</Dropdown.Item>
-                                                                    {/* <Dropdown.Item href="/aibot/User-Panel/Member/getIDcard" >ID Card</Dropdown.Item> */}
                                                                     <Dropdown.Item href={`/aibot/User-Panel/Member/getIDcard/${item?._id}`}>ID Card</Dropdown.Item>
                                                                     <Dropdown.Item href={`/aibot/User-Panel/Member/welcomeletter/${item?._id}`} >Welcome Letter</Dropdown.Item>
                                                                     <Dropdown.Item href="/aibot/User-Panel/Member/binarytree" >Binary Tree</Dropdown.Item>
@@ -201,36 +194,12 @@ function DistributerList({ dynemicFields, loading, params, state, handleChange, 
                                                                 </Dropdown.Menu>
                                                             </Dropdown>
 
-                                                            {/*  <Dropdown>
-                                                                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                                                    Reports
-                                                                </Dropdown.Toggle>
 
-                                                                <Dropdown.Menu>
-                                                                    <Dropdown.Item href={`/admin/statement/apes/report/${item?._id}`} target="blank">AEPS</Dropdown.Item>
-                                                                    <Dropdown.Item href={`/admin/statement/billpayment/report/${item?._id}`} target="blank">Billpayment</Dropdown.Item>
-                                                                    <Dropdown.Item href={`/admin/statement/recharge/report/${item?._id}`} target="blank">Recharge</Dropdown.Item>
-                                                                    <Dropdown.Item href={`/admin/statement/moneyTransfer/report/${item?._id}`} target="blank">Money Transfer</Dropdown.Item>
-                                                                    <Dropdown.Item href="/admin/report/pancard/3">UtiPancard</Dropdown.Item>
-                                                                    <Dropdown.Item href="/admin/statement/report/2">Account Stat...</Dropdown.Item>
-                                                                    <Dropdown.Item href="/admin/statementwallet/report/2">Aeps Stat...</Dropdown.Item>
-                                                                    <Dropdown.Item href={`/admin/wallets/report/${item?._id}`}>Wallets Reports</Dropdown.Item>
-                                                                </Dropdown.Menu>
-                                                            </Dropdown> */}
 
                                                             <Link to={`/admin/detail-lead/${item?._id}`} className="btn btn-primary shadow btn-xs sharp me-1"><i className="fa fa-refresh" /></Link>
                                                             <Link to={`/admin/create-user/${item?._id}`} className="btn btn-primary shadow btn-xs sharp me-1"><i className="fa fa-pencil" /></Link>
                                                             <Link to="#" onClick={() => setModalShow2(true)} className="btn btn-danger shadow btn-xs sharp"><i className="fa fa-home" /></Link>
-                                                            {/* <Popconfirm
-                                                            title="Delete Currency !"
-                                                            description="Are you sure to delete ?"
-                                                            onConfirm={() => confirm(item?.id)}
-                                                            onCancel={cancel}
-                                                            okText="Yes"
-                                                            cancelText="No"
-                                                        >
-                                                            <Link to="#" disable className="btn btn-danger shadow btn-xs sharp"><i className="fa fa-trash" /></Link>
-                                                        </Popconfirm> */}
+
                                                         </td>
 
                                                     </tr>

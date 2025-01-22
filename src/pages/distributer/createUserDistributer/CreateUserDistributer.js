@@ -4,7 +4,6 @@ import CreateUserDistributer from "../../../components/distributer/createUserDis
 const breadCrumbsTitle = {
     id: "1",
     title_1: "Members",
-    // title_2: "Distributer (0)",
     title_3: "Update User",
 }
 function CreateUserDistributerPage() {
