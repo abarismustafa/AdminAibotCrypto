@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { FaPencilAlt } from "react-icons/fa"; // Importing the edit icon
+import { FaPencilAlt } from "react-icons/fa";
 import Select from 'react-select';
 import { getBudgetMasterByUser, getCourseTypeForCombo, reailerDistIdAgainstAll } from "../../api/login/Login";
 
 function RequirementDetail() {
-  // State to hold form data
   const [formData, setFormData] = useState({
     course: [],
     interestedCourses: [],
@@ -16,7 +15,6 @@ function RequirementDetail() {
     fbPageName: "",
   });
 
-  // State to manage individual edit mode for each field
   const [isEditMode, setIsEditMode] = useState({
     course: false,
     interestedCourses: false,
@@ -28,12 +26,10 @@ function RequirementDetail() {
     fbPageName: false,
   });
 
-  // Handle multi-select change
   const handleMultiSelectChange = (field, selectedOptions) => {
     setFormData({ ...formData, [field]: selectedOptions });
   };
 
-  // Toggle edit mode for a specific field
   const toggleEditMode = (field) => {
     setIsEditMode((prev) => ({ ...prev, [field]: !prev[field] }));
   };
@@ -41,11 +37,9 @@ function RequirementDetail() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  // Handle form submission (or other actions)
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data updated:", formData);
-    // After submission, disable all fields
     setIsEditMode({
       course: false,
       interestedCourses: false,
@@ -58,22 +52,21 @@ function RequirementDetail() {
     });
   };
 
-  // Options for multi-select
-  const [courseOptions , setCourseOptions] = useState([]);
+  const [courseOptions, setCourseOptions] = useState([]);
 
-  const [interestedCoursesOptions , setInterestedCoursesOptions] = useState([]);
+  const [interestedCoursesOptions, setInterestedCoursesOptions] = useState([]);
 
-  const [courseTypeOptions , setCourseTypeOptions] = useState([]);
+  const [courseTypeOptions, setCourseTypeOptions] = useState([]);
 
-  const [budgetOptions , setBudgetOptions] = useState([]);
+  const [budgetOptions, setBudgetOptions] = useState([]);
 
   const getAllMaster = async () => {
     try {
       const res1 = await reailerDistIdAgainstAll()
       const res2 = await getCourseTypeForCombo()
-      const res3 = await getBudgetMasterByUser(0,100)
+      const res3 = await getBudgetMasterByUser(0, 100)
       const maped1 = res1.data.map((item) => ({
-        ...item ,
+        ...item,
         value: item.id,
         label: item.service_name,
       }));
@@ -81,13 +74,13 @@ function RequirementDetail() {
       setInterestedCoursesOptions(maped1);
 
       const maped2 = res2.data.map((item) => ({
-        ...item ,
+        ...item,
         value: item._id,
         label: item.course_type_name,
       }));
       setCourseTypeOptions(maped2);
       const maped3 = res3.data.map((item) => ({
-        ...item ,
+        ...item,
         value: item._id,
         label: item.name,
       }));
@@ -109,7 +102,6 @@ function RequirementDetail() {
           <div className="card p-3">
             <form onSubmit={handleSubmit}>
               <div className="row">
-                {/* Course */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Course *: </strong>
@@ -142,7 +134,6 @@ function RequirementDetail() {
                   </div>
                 </div>
 
-                {/* Interested Courses */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Interested Courses: </strong>
@@ -175,7 +166,6 @@ function RequirementDetail() {
                   </div>
                 </div>
 
-                {/* Course Type */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Course Type: </strong>
@@ -207,8 +197,6 @@ function RequirementDetail() {
                     />
                   </div>
                 </div>
-
-                {/* Budget */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Budget: </strong>
@@ -241,8 +229,6 @@ function RequirementDetail() {
                   </div>
                 </div>
 
-
-                {/* Location */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Location: </strong>
@@ -270,7 +256,6 @@ function RequirementDetail() {
                   </div>
                 </div>
 
-                {/* FB Form ID */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>FB Form ID: </strong>
@@ -298,7 +283,6 @@ function RequirementDetail() {
                   </div>
                 </div>
 
-                {/* FB Form Name */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>FB Form Name: </strong>
@@ -326,7 +310,6 @@ function RequirementDetail() {
                   </div>
                 </div>
 
-                {/* FB Page Name */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>FB Page Name: </strong>
@@ -354,7 +337,6 @@ function RequirementDetail() {
                   </div>
                 </div>
 
-                {/* Submit Button */}
                 {Object.values(isEditMode).some((mode) => mode) && (
                   <button type="submit" className="btn btn-success mt-3">
                     Submit

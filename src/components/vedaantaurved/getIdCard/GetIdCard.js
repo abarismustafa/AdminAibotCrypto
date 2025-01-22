@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import aibotlogo from "../../../assets/images/logo/profile.jpg"
-import { getMemberIdCardDataById, getUpdateProfile } from '../../../api/login/Login'
+import { getMemberIdCardDataById } from '../../../api/login/Login'
 import ExportPdf from '../../../common/exportPdf/ExportPdf'
 import { baseUrlImage } from '../../../baseUrl'
 import { useParams } from 'react-router-dom'
@@ -10,13 +10,7 @@ function GetIdCard() {
 
     const [state, setState] = useState(null)
     const userProfileData = async () => {
-        // try {
-        //     const res = await getUpdateProfile();
-        //     console.log('idcardData---', res?.data)
-        //     setState(res?.data)
-        // } catch (error) {
-        //     alert(error?.message)
-        // }
+
         try {
             const res = await getMemberIdCardDataById(params?.id);
             console.log('idcardData---', res?.data)
@@ -52,13 +46,8 @@ function GetIdCard() {
                     </div>
                     <p><strong>Distributer ID:</strong> {state?.refer_id}</p>
                     <p><strong>Name:</strong> {state?.name}</p>
-                    {/* <p><strong>Gender:</strong> Male</p> */}
                     <p><strong>Mobile:</strong> {state?.mobile}</p>
-                    {/* <p><strong>DOB:</strong> {new Date(state?.staff?.dob).toLocaleDateString('en-GB', {
-                        day: '2-digit',
-                        month: 'short',
-                        year: 'numeric',
-                    })}</p> */}
+
                     <p><strong>On Boarding Date:</strong> {state?.onBoardDate}</p>
                 </div>
                 <div className=''>

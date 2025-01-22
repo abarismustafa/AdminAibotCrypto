@@ -75,12 +75,7 @@ function LeadDetail() {
                                             <SystematicInfo />
                                         </Accordion.Body>
                                     </Accordion.Item>
-                                    {/* <Accordion.Item eventKey="3">
-                                        <Accordion.Header>Description Detail</Accordion.Header>
-                                        <Accordion.Body style={{ padding: "0" }}>
-                                            Description Detail
-                                        </Accordion.Body>
-                                    </Accordion.Item> */}
+                                    
                                 </Accordion>
                             </div>
                             <div className="col-lg-8 col-md-12">

@@ -1,4 +1,5 @@
 import loginAbarisLogo from "../../assets/images/logo/AbarisSoftectLogo.png";
+import loginAibotLogo from "../../assets/images/logo/aibot-lodo.png";
 import loginAbarisBanner from "../../assets/images/kyc/abarisBanner.png";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -158,6 +159,7 @@ function Login() {
                   <div className="login-content">
                     <a href="#">
                       <img src={state?.logo ? `${baseUrlImage}${state?.logo}` : loginAbarisLogo} className="mb-3 logo-dark" alt />
+                      {/* <img src={state?.logo ? `${baseUrlImage}${state?.logo}` : loginAibotLogo} className="mb-3 logo-dark" alt /> */}
                     </a>
                     {state?.login_left_description ? (<p>
                       {state?.login_left_description}

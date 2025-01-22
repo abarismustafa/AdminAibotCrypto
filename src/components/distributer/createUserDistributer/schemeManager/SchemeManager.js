@@ -22,17 +22,6 @@ function SchemeManager({ show2, handleClose2 }) {
             errors.date = "Date is required";
         }
 
-        // if (!values.email) {
-        //     errors.email = "Email is required";
-        // } else if (!regexEmail.test(values.email)) {
-        //     errors.email = "Invalid Email";
-        // }
-
-        // if (!values.mobileNumber) {
-        //     errors.mobileNumber = "Mobile Number is required";
-        // } else if (!regexMobileNumber.test(values.mobileNumber)) {
-        //     errors.mobileNumber = "Invalid Mobile Number";
-        // }
 
         if (!values.userName) {
             errors.userName = "User Name is required";
@@ -61,18 +50,6 @@ function SchemeManager({ show2, handleClose2 }) {
         }
 
 
-        // if (!values.panNumber) {
-        //     errors.panNumber = "PAN Number is required";
-        // } else if (!regexPanNumber.test(values.panNumber)) {
-        //     errors.panNumber = "Invalid PAN Number";
-        // }
-
-        // if (!values.gstNumber) {
-        //   errors.gstNumber = "GST Number is required";
-        // } else if (!regexGstNumber.test(values.gstNumber)) {
-        //   errors.gstNumber = "Invalid GST Number";
-        // }
-
 
 
         return errors;
@@ -82,9 +59,7 @@ function SchemeManager({ show2, handleClose2 }) {
         console.log(values);
     };
 
-    const changeHandle = (selectedData) => {
-        // TODO
-    };
+    
     return (
         <>
             <Modal show={show2} onHide={handleClose2} className='dilog-box' id="dilog-box">
@@ -144,14 +119,7 @@ function SchemeManager({ show2, handleClose2 }) {
                         }}
                     </Formik>
                 </Modal.Body>
-                {/* <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer> */}
+           
             </Modal>
         </>
     )

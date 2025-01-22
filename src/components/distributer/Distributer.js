@@ -14,7 +14,6 @@ function Distributer() {
     const [loading, setLoading] = useState(false);
     const [totalCount, setTotalCount] = useState()
     const userId = params?.id
-    // const [userTypeLength, setUserTypeLength] = useState([]);
     const [page, setPage] = useState(0)
     const count = 10
     const [approval, setApproveVal] = useState(null)
@@ -158,7 +157,6 @@ function Distributer() {
     return (
         <>
             <Breadcrumbs breadCrumbsTitle={breadCrumbsTitle} />
-            {/* <DistributerKycStatus submitForm={submitForm} params={params} initialValues={initialValues} /> */}
             <DisterbuterFIlter dynemicFields={dynemicFields} params={params} selectedUsers={selectedUsers} submitForm={submitForm} getReailerDistIdAgainst={getReailerDistIdAgainst} />
             <DistributerList totalCount={totalCount} dynemicFields={dynemicFields} selectedUsers={selectedUsers} setSelectedUsers={setSelectedUsers} loading={loading} params={params} state={state} handleChange={handleChange} onChangeVal={onChangeVal} approval={approval} />
         </>

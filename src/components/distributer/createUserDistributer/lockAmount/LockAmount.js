@@ -9,10 +9,6 @@ import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 function LockAmount({ show5, handleClose5, getItem }) {
-    // const initialValues = {
-    //     SecurityPin: '',
-    //     locking_amt: ''
-    // };
     const [initialValues, setInitialValues] = useState(getItem);
     useEffect(() => {
         setInitialValues(getItem)
@@ -65,7 +61,6 @@ function LockAmount({ show5, handleClose5, getItem }) {
         } catch (error) {
 
         }
-        // Prevent default behavior if necessary
     };
 
     return (
@@ -80,7 +75,6 @@ function LockAmount({ show5, handleClose5, getItem }) {
                 <Modal.Body>
                     <Formik
                         initialValues={initialValues}
-                        // validate={validate}
                         onSubmit={submitForm}
                     >
                         {(formik) => {
@@ -109,23 +103,8 @@ function LockAmount({ show5, handleClose5, getItem }) {
                                                 name="locking_amt"
                                             />
                                         </div>
-                                        {/* <div className="col-x-12-6 mb-3">
-                                            <CustomInputField
-                                                type="password"
-                                                value={values.SecurityPin}
-                                                hasError={errors.SecurityPin && touched.SecurityPin}
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                errorMsg={errors.SecurityPin}
-                                                autoFocus={true}
-                                                id="SecurityPin"
-                                                placeholder="Security Pin"
-                                                name="SecurityPin"
-                                            />
-                                        </div> */}
                                         <div className='border-top'>
                                             <button className="btn btn-primary pd-x-20 rounded-2" type="submit" style={{ marginTop: "15px" }}> Save </button>
-                                            {/* <button className="btn btn-danger pd-x-20 rounded-2" onClick={handleClose5} type="button" style={{ marginTop: "15px" }}> Close </button> */}
                                         </div>
                                     </div>
                                 </form>

@@ -26,7 +26,6 @@ function ModelLeadFollowUp(props) {
       const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form data submitted:", formData);
-        // Handle submission logic here
       };
     
     return (
@@ -55,7 +54,6 @@ function ModelLeadFollowUp(props) {
                     </div>
 
                     <form onSubmit={handleSubmit}>
-                        {/* Comments Section */}
                         <div className="form-group mb-3">
                             <label htmlFor="comments">Add your comments here</label>
                             <textarea
@@ -69,7 +67,6 @@ function ModelLeadFollowUp(props) {
                             />
                         </div>
 
-                        {/* Lead Status */}
                         <div className="row">
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="leadStatus">
@@ -85,11 +82,9 @@ function ModelLeadFollowUp(props) {
                                     <option value="New Lead">New Lead</option>
                                     <option value="In Progress">In Progress</option>
                                     <option value="Closed">Closed</option>
-                                    {/* Add more options as needed */}
                                 </select>
                             </div>
 
-                            {/* Lead Sub Status */}
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="leadSubStatus">
                                     <strong>Lead Sub Status</strong>
@@ -104,12 +99,10 @@ function ModelLeadFollowUp(props) {
                                     <option value="">Select An Option</option>
                                     <option value="Pending">Pending</option>
                                     <option value="Contacted">Contacted</option>
-                                    {/* Add more options as needed */}
                                 </select>
                             </div>
                         </div>
 
-                        {/* Follow Up On */}
                         <div className="row">
                             <div className="col-md-6 mb-3">
                                 <label>
@@ -126,8 +119,6 @@ function ModelLeadFollowUp(props) {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Submit Button */}
                         <button type="submit" className="btn btn-primary mt-3">
                             Update
                         </button>

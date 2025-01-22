@@ -229,13 +229,13 @@ function AddPackage() {
                                     </div>
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="levelincome" className="form-label">
-                                            Level Income <span style={{ color: 'red' }}>*</span>
+                                            Level Income Till <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="text"
                                             name="levelincome"
                                             className="form-control"
-                                            placeholder="Enter Level Income"
+                                            placeholder="Enter Number Of Levels Till"
                                             value={formData?.levelincome}
                                             onChange={handleChange}
                                         />
@@ -245,13 +245,13 @@ function AddPackage() {
                                     </div>
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="earnUpto" className="form-label">
-                                            Earn Upto <span style={{ color: 'red' }}>*</span>
+                                            Binary Income Earn Upto Level <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="text"
                                             name="earnUpto"
                                             className="form-control"
-                                            placeholder="Enter Earn Upto"
+                                            placeholder="Enter Binary Income Earn Upto Level"
                                             value={formData?.earnUpto}
                                             onChange={handleChange}
                                         />

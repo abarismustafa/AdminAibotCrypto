@@ -9,7 +9,6 @@ const Tree = () => {
   return (
     <>
       <div className="tree-container">
-        {/* Root Node */}
         <div className="row justify-content-center position-relative">
           <div className="col-auto text-center">
             <div className="circle-tree overflow-hidden" onClick={() => setModalShow(true)}>
@@ -20,7 +19,6 @@ const Tree = () => {
 
         </div>
 
-        {/* First Level */}
         <div className="row">
           <div className="col-6 justify-content-center position-relative">
             <div className="text-center">
@@ -50,7 +48,6 @@ const Tree = () => {
           </div>
         </div>
 
-        {/* Second Level */}
         <div className="row">
           <div className="col-3 justify-content-center position-relative">
             <div className="text-center">

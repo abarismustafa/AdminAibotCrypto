@@ -15,15 +15,7 @@ function MemberPermission({ show4, handleClose4 }) {
                             <div className="card">
                                 <div className="card-body p-0">
                                     <div className="table-responsive active-projects style-1">
-                                        {/* <div className="tbl-caption">
-                                            <h4 className="heading mb-0">BANK MASTER</h4>
-                                            <div>
-                                                <Link className="btn btn-primary btn-sm" to="/add-bank" role="button" aria-controls="offcanvasExample">+ BANK MASTER</Link>
-                                                <button type="button" className="btn btn-secondary btn-sm" >
-                                        + Invite Employee
-                                    </button>
-                                            </div>
-                                        </div> */}
+                                      
                                         <div id="empoloyees-tblwrapper_wrapper" className="dataTables_wrapper no-footer"><div className="dt-buttons"><button className="dt-button buttons-excel buttons-html5 btn btn-sm border-0" tabIndex={0} aria-controls="empoloyees-tblwrapper" type="button"><span><i className="fa-solid fa-file-excel" /> Export Report</span></button> </div><table id="empoloyees-tblwrapper" className="table dataTable no-footer" role="grid" aria-describedby="empoloyees-tblwrapper_info">
                                             <thead>
                                                 <tr role="row">
@@ -43,43 +35,7 @@ function MemberPermission({ show4, handleClose4 }) {
 
                                                 </tr>
                                             </thead>
-                                            {/* <tbody>
-
-                                                <tr role="row" className="odd">
-                                                    <td>
-                                                        <div className="form-check">
-                                                            <input className="form-check-input" type="checkbox" id="Resource" />
-                                                            <label className="form-check-label" htmlFor="Resource">
-                                                                Resource
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div className='row'>
-                                                            <div className='col-lg-4'>
-                                                                <div className="form-check">
-                                                                    <input className="form-check-input" type="checkbox" id="Profile" />
-                                                                    <label className="form-check-label" htmlFor="Profile">
-                                                                        Change Company Profile
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            <div className='col-lg-4'>
-                                                                <div className="form-check">
-                                                                    <input className="form-check-input" type="checkbox" id="Commission" />
-                                                                    <label className="form-check-label" htmlFor="Commission">
-                                                                        View Commission
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </td>
-                                                    
-                                                </tr>
-
-                                            </tbody> */}
+                                           
                                             <tbody>
                                                 <tr>
                                                     <td>
@@ -103,12 +59,10 @@ function MemberPermission({ show4, handleClose4 }) {
 
                                                     <td class="row">
                                                         <div class=" col-lg-6 ">
-                                                            {/* <div className="form-check"> */}
                                                             <input className="form-check-input" type="checkbox" defaultValue id="Commission" />
                                                             <label className="form-check-label" htmlFor="Profile">
                                                                 Change Company Profile
                                                             </label>
-                                                            {/* </div> */}
                                                         </div>
                                                         <div class=" col-lg-6">
 

@@ -1,37 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { FaPencilAlt } from "react-icons/fa"; // Importing the edit icon
+import { FaPencilAlt } from "react-icons/fa"; 
 import { useParams } from "react-router-dom";
 import Loadar from "../../common/loader/Loader";
 import { getPermissions, updatePermissions } from "../../api/login/Login";
 
 function PermisionOption() {
-  // State to hold permission values
   const [permissions, setPermissions] = useState({
     whatsapp: false,
     sms: false,
     email: false,
   });
 
-  // State to manage individual edit mode for each permission
   const [isEditMode, setIsEditMode] = useState({
     whatsapp: false,
     sms: false,
     email: false,
   });
 
-  // Handle permission change
   const handlePermissionChange = (e) => {
     const { name, value } = e.target;
     setPermissions({ ...permissions, [name]: value });
   };
 
-  // Toggle edit mode for each permission
   const parems = useParams()
   const toggleEditMode = (field) => {
     setIsEditMode((prev) => ({ ...prev, [field]: !prev[field] }));
   };
 
-  // Handle form submit (or additional logic)
   const [loader , setLoader] = useState(false)
   const handleSubmit =async (e) => {
     e.preventDefault();
@@ -43,7 +38,6 @@ function PermisionOption() {
     }
     setLoader(false)
     console.log("Permissions updated:", permissions);
-    // Disable all inputs after submission
     setIsEditMode({
       whatsapp: false,
       sms: false,
@@ -76,7 +70,6 @@ function PermisionOption() {
           <div className="card p-3">
             <form onSubmit={handleSubmit}>
               <div className="row">
-                {/* Whatsapp Permission */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Whatsapp: </strong>
@@ -105,8 +98,6 @@ function PermisionOption() {
                     />
                   </div>
                 </div>
-
-                {/* SMS Permission */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>SMS: </strong>
@@ -136,7 +127,6 @@ function PermisionOption() {
                   </div>
                 </div>
 
-                {/* Email Optin Permission */}
                 <div className="col-12 mb-2">
                   <label>
                     <strong>Email Optin: </strong>

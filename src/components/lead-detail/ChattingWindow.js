@@ -11,8 +11,6 @@ function ChattingWindow() {
     const getChattings = async () => {
         try {
             const res = await geChatting(parem.id)
-            // setMessages(res.data)
-            // dispatch(setChats(res.data.length));
         } catch (error) {
 
         }
@@ -69,15 +67,12 @@ function ChattingWindow() {
 
     return (
         <div className="chat-window">
-            {/* <div className="chat-header">
-                Mobile Phone - +91 0885174628
-            </div> */}
+            
             {loader && <Loadar />}
             <ToastContainer />
             <div className="chat-body">
                 {messages?.map((message, index) => (
                     <div key={index} className={`message ${message.sender === 'You' ? 'sent' : 'received'}`}>
-                        {/* <div className="message-sender">{message.sender}</div> */}
                         <div className="message-text">{message.chat}</div>
                     </div>
                 ))}

@@ -13,7 +13,6 @@ const EnquiryTable = () => {
             enquirySource: 'Website',
             enquiryStatus: 'Pending'
         },
-        // Add more enquiries as needed
     ];
 
     return (

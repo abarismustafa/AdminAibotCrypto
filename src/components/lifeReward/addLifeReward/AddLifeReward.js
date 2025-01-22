@@ -268,6 +268,22 @@ function AddLifeReward() {
                             <form className="tbl-captionn" onSubmit={handleSubmit}>
                                 <div className="row mt-2">
                                     <div className="col-lg-6 mb-4">
+                                        <label htmlFor="plan_id" className="form-label">
+                                            Package <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
+                                            onChange={handleChange}>
+                                            <option selected>Select Package</option>
+                                            {allPackageD && allPackageD?.map((item, i) => {
+                                                return <option key={i} value={item?._id}>{item?.name}</option>
+                                            })}
+                                        </select>
+                                        {errors.plan_id && (
+                                            <div className="text-danger mt-1">{errors.plan_id}</div>
+                                        )}
+                                    </div>
+
+                                    <div className="col-lg-6 mb-4">
                                         <label htmlFor="name" className="form-label">
                                             Name <span style={{ color: 'red' }}>*</span>
                                         </label>
@@ -285,13 +301,13 @@ function AddLifeReward() {
                                     </div>
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="reward" className="form-label">
-                                            Reward <span style={{ color: 'red' }}>*</span>
+                                            Rewards Income Amount <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="reward"
                                             className="form-control"
-                                            placeholder="Enter reward"
+                                            placeholder="Enter Rewards Income Amount"
                                             value={formData?.reward}
                                             onChange={handleChange}
                                         />
@@ -301,13 +317,13 @@ function AddLifeReward() {
                                     </div>
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="no_of_match" className="form-label">
-                                            No Of Match <span style={{ color: 'red' }}>*</span>
+                                            Bot Match Required <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
                                             name="no_of_match"
                                             className="form-control"
-                                            placeholder="Enter no_of_match"
+                                            placeholder="Enter Bot Match Required"
                                             value={formData?.no_of_match}
                                             onChange={handleChange}
                                         />
@@ -371,21 +387,7 @@ function AddLifeReward() {
                                         />
                                     )} */}
 
-                                    <div className="col-lg-6 mb-4">
-                                        <label htmlFor="plan_id" className="form-label">
-                                            Package <span style={{ color: 'red' }}>*</span>
-                                        </label>
-                                        <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
-                                            onChange={handleChange}>
-                                            <option selected>Select Package</option>
-                                            {allPackageD && allPackageD?.map((item, i) => {
-                                                return <option key={i} value={item?._id}>{item?.name}</option>
-                                            })}
-                                        </select>
-                                        {errors.plan_id && (
-                                            <div className="text-danger mt-1">{errors.plan_id}</div>
-                                        )}
-                                    </div>
+
 
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="isActive" className="form-label">

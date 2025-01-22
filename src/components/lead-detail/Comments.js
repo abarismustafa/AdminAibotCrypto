@@ -8,11 +8,10 @@ import { useDispatch } from 'react-redux';
 function Comments() {
     const params = useParams();
 
-    const [comments, setComments] = useState([]); // To store comments
-    const [newComment, setNewComment] = useState(''); // For new comment input
-    const [loading, setLoading] = useState(false); // Loading state for post requests
+    const [comments, setComments] = useState([]); 
+    const [newComment, setNewComment] = useState(''); 
+    const [loading, setLoading] = useState(false); 
 
-    // Fetch existing comments from API
     const dispatch = useDispatch();
     const fetchComments = async () => {
         try {
@@ -30,9 +29,8 @@ function Comments() {
         fetchComments();
     }, [params?.id]);
 
-    // Post a new comment
     const postComment = async () => {
-        if (!newComment.trim()) return; // Prevent posting empty comments
+        if (!newComment.trim()) return; 
 
         setLoading(true);
         try {

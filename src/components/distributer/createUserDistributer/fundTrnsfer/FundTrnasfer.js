@@ -9,7 +9,7 @@ function FundTransfer({ show, handleClose ,datas}) {
     console.log(datas);
     
     const initialValues = {
-        paymentDate: new Date().toISOString().slice(0, 10),  // Autofill date
+        paymentDate: new Date().toISOString().slice(0, 10), 
         status: 'Approved',
         bankRef: '',
         amount: '',
@@ -18,7 +18,7 @@ function FundTransfer({ show, handleClose ,datas}) {
         account_number: '',
         receipt_img: '',
         remark: '',
-        user_id: datas?._id,  // Should be dynamically set if needed
+        user_id: datas?._id,  
     };
 
     const [values, setValues] = useState(initialValues);
@@ -80,7 +80,7 @@ function FundTransfer({ show, handleClose ,datas}) {
                 handleClose()
               }, 1000);
             }
-            // Submit form data logic here
+            
         }
     };
 
