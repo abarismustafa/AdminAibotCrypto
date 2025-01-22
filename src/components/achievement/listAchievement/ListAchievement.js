@@ -110,7 +110,9 @@ function ListAchievement() {
                                                         <td valign="top" className="dataTables_empty" >{item?.reward}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.no_of_match}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.plan_id}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.isActive == true ? 'Active' : 'InActive'}</td>
+                                                        <td valign="top" className="dataTables_empty" >
+                                                            <span style={{ border: '1px solid black', padding: '2px 6px', borderRadius: '5px', backgroundColor: item?.isActive == true ? 'green' : 'red', color: 'white', width: '80px', display: 'inline-block' }}>{item?.isActive == true ? 'Active' : 'InActive'}</span>
+                                                        </td>
                                                         <td>
                                                             <div className="d-flex">
                                                                 <Link to={`/achievement/edit/${item?._id}`} className="btn btn-primary shadow btn-xs sharp me-1">
