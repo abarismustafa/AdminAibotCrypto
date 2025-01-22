@@ -634,6 +634,7 @@ export const providerDelete = (id) => {
   return axiosInstance.delete(`${baseUrl}provider/deleteprovider/${id}`);
 };
 
+
 export const getProviderId = (id) => {
   return axiosInstance.get(`${baseUrl}provider/${id}`);
 };
@@ -7213,7 +7214,7 @@ export const deletePackage = (id) => {
 
 // =====Level======================
 export const getAllPackageList = (data) => {
-  return axiosInstance.get(`${baseUrl}Mlm_Plan/public`);
+  return axiosInstance.get(`${baseUrl}Mlm_Plan/admin`);
 };
 
 export const postLevel = (data) => {
@@ -7263,8 +7264,8 @@ export const postLifeReward = (data) => {
     },
   });
 };
-export const updateLifeReward = (data, id) => {
-  return axiosInstance.put(`/MlmLifeReward/update_type/${id}`, data, {
+export const updateLifeReward = (data) => {
+  return axiosInstance.put(`/MlmLifeReward/update_type/${data?.id}`, data?.data, {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
@@ -7301,8 +7302,8 @@ export const postAchievement = (data) => {
     },
   });
 };
-export const updateAchievement = (data, id) => {
-  return axiosInstance.put(`/Mlm_Achivement/update_type/${id}`, data, {
+export const updateAchievement = (data) => {
+  return axiosInstance.put(`/Mlm_Achivement/update_type/${data?.id}`, data?.data, {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
@@ -7329,4 +7330,9 @@ export const deleteAchievement = (id) => {
       },
     }
   );
+};
+
+
+export const getMemberIdCardDataById = (id) => {
+  return axiosInstance.get(`${baseUrl}user/${id}`);
 };

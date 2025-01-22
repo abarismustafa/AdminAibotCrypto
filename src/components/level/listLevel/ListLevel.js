@@ -98,7 +98,7 @@ function ListLevel() {
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Reward</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Package</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>No Of Match</th>
-                                                    <th style={{ width: '150px', textAlign: 'center' }}>Income Type</th>
+                                                    <th style={{ width: '150px', textAlign: 'center' }}>IsActive</th>
                                                     <th style={{ width: '150px' }}>Action</th>
                                                 </tr>
                                             </thead>
@@ -108,9 +108,11 @@ function ListLevel() {
                                                         <td valign="top" className="dataTables_empty">{(i + 1) + (page * count)}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.Level}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.Reward}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.plan_id}</td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.plan_id?.name}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.No_of_match}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.isActive == true ? 'Active' : 'InActive'}</td>
+                                                        <td valign="top" className="dataTables_empty" >
+                                                            <span style={{ border: '1px solid black', padding: '2px 6px', borderRadius: '5px', backgroundColor: item?.isActive == true ? 'green' : 'red', color: 'white', width: '80px', display: 'inline-block' }}>{item?.isActive == true ? 'Active' : 'InActive'}</span>
+                                                        </td>
                                                         <td>
                                                             <div className="d-flex">
                                                                 <Link to={`/level/edit/${item?._id}`} className="btn btn-primary shadow btn-xs sharp me-1">

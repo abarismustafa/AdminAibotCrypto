@@ -21,6 +21,8 @@ function AddPackage() {
         levelincome: "",
         earnUpto: "",
         isActive: "",
+        duration_type: "",
+        duration: "",
     });
     const [allCurrenncyD, setAllCurrencyD] = useState();
 
@@ -55,21 +57,15 @@ function AddPackage() {
         if (!formData.earnUpto) {
             errors.earnUpto = "Earn Upto is required.";
         }
-        // if (!formData.TaxPrice) {
-        //     errors.TaxPrice = "Tax Price is required.";
-        // }
-        // if (!formData.BasePrice) {
-        //     errors.BasePrice = "Base Price is required.";
-        // }
-        // if (!formData.TotalPrice) {
-        //     errors.TotalPrice = "Total Price is required.";
-        // }
         if (!formData.isActive) {
             errors.isActive = "IsActive is required.";
         }
-        // if (!formData.Currency_id) {
-        //     errors.Currency_id = "Currency id is required.";
-        // }
+        if (!formData.duration_type) {
+            errors.duration_type = "Duration Type is required.";
+        }
+        if (!formData.duration) {
+            errors.duration = "Duration is required.";
+        }
 
         return errors;
     };
@@ -265,6 +261,38 @@ function AddPackage() {
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
+                                        <label htmlFor="duration_type" className="form-label">
+                                            Duration Type <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <select className="form-select form-control" aria-label="Default select example" name="duration_type" value={formData?.duration_type}
+                                            onChange={handleChange}>
+                                            <option selected>Select Duration Type</option>
+                                            <option value={"Days"}>Days</option>
+                                            <option value={"Months"}>Months</option>
+                                            <option value={"Years"}>Years</option>
+                                        </select>
+                                        {errors.duration_type && (
+                                            <div className="text-danger mt-1">{errors.duration_type}</div>
+                                        )}
+                                    </div>
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="duration" className="form-label">
+                                            Duration <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            name="duration"
+                                            className="form-control"
+                                            placeholder="Enter Duration"
+                                            value={formData?.duration}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.duration && (
+                                            <div className="text-danger mt-1">{errors.duration}</div>
+                                        )}
+                                    </div>
+
+                                    <div className="col-lg-6 mb-4">
                                         <label htmlFor="isActive" className="form-label">
                                             IsActive <span style={{ color: 'red' }}>*</span>
                                         </label>
@@ -399,8 +427,8 @@ function AddPackage() {
                             </form>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
 
         </>
     )

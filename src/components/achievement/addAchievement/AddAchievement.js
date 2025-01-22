@@ -225,11 +225,9 @@ function AddAchievement() {
                                         <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
                                             onChange={handleChange}>
                                             <option selected>Select Package</option>
-                                            <option value={"Percent"}>Abc</option>
-                                            <option value={"Flat"}>Def</option>
-                                            {/* {allPackageD && allPackageD?.map((item, i) => {
-                                                        return <option key={i} value={item?._id}>{item?.name}</option>
-                                                    })} */}
+                                            {allPackageD && allPackageD?.map((item, i) => {
+                                                return <option key={i} value={item?._id}>{item?.name}</option>
+                                            })}
                                         </select>
                                         {errors.plan_id && (
                                             <div className="text-danger mt-1">{errors.plan_id}</div>
@@ -245,8 +243,8 @@ function AddAchievement() {
                                         <select className="form-select form-control" aria-label="Default select example" name="isActive" value={formData?.isActive}
                                             onChange={handleChange}>
                                             <option selected>Select IsActive</option>
-                                            <option value={"Percent"}>Percent</option>
-                                            <option value={"Flat"}>Flat</option>
+                                            <option value={true}>True</option>
+                                            <option value={false}>False</option>
                                         </select>
                                         {errors.isActive && (
                                             <div className="text-danger mt-1">{errors.isActive}</div>

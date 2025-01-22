@@ -71,6 +71,7 @@ import LanguagePage from "./pages/language";
 import FormLanguage from "./components/language/formLanguage.js/FormLanguage";
 import CurrencyPage from "./pages/currency";
 import CurrencyForm from "./components/currency/CurrencyForm";
+import DistributerPage from "./pages/distributer";
 
 import CompanyMasters from "./pages/companyMasters";
 import CompanyFormMaster from "./components/topNavigationComp/masters/companyMaster/companyFormMaster/CompanyFormMaster";
@@ -81,6 +82,15 @@ import LeftMemberPage from "./pages/leftMemberPage";
 import RightMemberPage from "./pages/rightMemberPage";
 import MainWalletReportPage from "./pages/reports/mainWalletReportPage";
 import DistributorSearchPage from "./pages/distributorSearchPage";
+import CreateUserDistributerPage from "./pages/distributer/createUserDistributer/CreateUserDistributer";
+import LeadDetail from "./pages/lead-detail/LeadDetail";
+
+import WelcomeLetter from "./components/vedaantaurved/userPanel/UserPanel";
+import GetIdCard from "./components/vedaantaurved/getIdCard/GetIdCard";
+import Bainarytree from "./pages/vedantayurveda/bainaryTree";
+
+
+
 
 
 function App() {
@@ -147,7 +157,10 @@ function App() {
   }
   // console.log(window.localStorage.getItem('dashRout') == null);
 
-  const [mnualData, setManualData] = useState()
+  const [mnualData, setManualData] = useState();
+
+
+
   return (
     <>
       <Routes>
@@ -236,8 +249,6 @@ function App() {
               <Route path="right-member" element={<RightMemberPage />} />
               <Route path="main-wallet/report" element={<MainWalletReportPage />} />
 
-
-
               <Route path="language" element={<LanguagePage />} />
               <Route path="add-language" element={<FormLanguage />} />
               <Route path="update_language/:id" element={<FormLanguage />} />
@@ -269,10 +280,35 @@ function App() {
                 element={<CompanyTypeMasterForm />}
               />
 
+              <Route
+                path="member-list/:id/:name"
+                element={<DistributerPage />}
+              />
 
-
+              <Route
+                path="/admin/create-user/:id"
+                element={<CreateUserDistributerPage />}
+              />
+              <Route
+                path="/admin/detail-lead/:id"
+                element={<LeadDetail />}
+              />
 
               {/* ===================MOIN Route End========================= */}
+
+
+
+
+
+
+              <Route path="aibot/User-Panel/Member/welcomeletter/:id" element={<WelcomeLetter />} />
+              <Route path="aibot/User-Panel/Member/getIDcard/:id" element={<GetIdCard />} />
+              <Route path="aibot/User-Panel/Member/binarytree" element={<Bainarytree />} />
+
+
+
+
+
 
 
               <Route path="*" element={<PageNotFound />} />
