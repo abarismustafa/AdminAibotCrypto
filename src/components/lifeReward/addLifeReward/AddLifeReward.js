@@ -41,20 +41,20 @@ function AddLifeReward() {
             [name]: "",
         });
     };
-    const handleFileChange = (e) => {
-        const files = Array.from(e.target.files);
-        const fileData = files.map((file) => {
-            return URL.createObjectURL(file);
-        });
+    // const handleFileChange = (e) => {
+    //     const files = Array.from(e.target.files);
+    //     const fileData = files.map((file) => {
+    //         return URL.createObjectURL(file);
+    //     });
 
-        setFormData({
-            ...formData,
-            imgs: fileData,
-        });
-        setErrors({
-            ...errors,
-        });
-    };
+    //     setFormData({
+    //         ...formData,
+    //         imgs: fileData,
+    //     });
+    //     setErrors({
+    //         ...errors,
+    //     });
+    // };
 
 
     const handleSingleImageUpload = async (e) => {
@@ -101,24 +101,24 @@ function AddLifeReward() {
             "image/x-icon"
         ];
         const urls = [];
-        const errors = [];
+        // const errors = [];
 
-        if (files.length === 0) {
-            setFileError("Please select at least one file.");
-            return;
-        }
+        // if (files.length === 0) {
+        //     setFileError("Please select at least one file.");
+        //     return;
+        // }
 
         // Validate all files
-        for (const file of files) {
-            if (!allowedTypes.includes(file.type)) {
-                errors.push(`${file.name} is an invalid file type.`);
-            }
-        }
+        // for (const file of files) {
+        //     if (!allowedTypes.includes(file.type)) {
+        //         errors.push(`${file.name} is an invalid file type.`);
+        //     }
+        // }
 
-        if (errors.length > 0) {
-            setFileError(errors.join(" "));
-            return;
-        }
+        // if (errors.length > 0) {
+        //     setFileError(errors.join(" "));
+        //     return;
+        // }
 
         try {
             // Upload files one by one
@@ -131,20 +131,20 @@ function AddLifeReward() {
                     urls.push(res?.data?.data?.url); // Collect the uploaded file URL
                     setFormData({ ...formData, imgs: urls })
                 } else {
-                    errors.push(`${file.name} failed to upload.`);
+                    // errors.push(`${file.name} failed to upload.`);
                 }
             }
 
             // Handle any upload errors
-            if (errors.length > 0) {
-                toast.error(errors.join(" "), { position: "top-center" });
-            }
+            // if (errors.length > 0) {
+            //     toast.error(errors.join(" "), { position: "top-center" });
+            // }
 
             // If there are successful uploads, send the URLs to your API
 
         } catch (error) {
-            console.error("Error during file upload", error);
-            toast.error(`Error: ${error.message}`, { position: "top-center" });
+            // console.error("Error during file upload", error);
+            // toast.error(`Error: ${error.message}`, { position: "top-center" });
         }
     };
 

@@ -9,7 +9,7 @@ import BroadCasterModal from "../distributerList/broadCasterModal/BroadCasterMod
 function DisterbuterFIlter({ dynemicFields, submitForm, initialValues, params, getReailerDistIdAgainst, selectedUsers, setSelectedUsers }) {
     const todayDate = () => {
         const today = new Date();
-        return today.toISOString().split('T')[0]; 
+        return today.toISOString().split('T')[0];
     };
 
     const [formData, setFormData] = useState({
@@ -222,7 +222,7 @@ function DisterbuterFIlter({ dynemicFields, submitForm, initialValues, params, g
                                             classNamePrefix="select"
                                             placeholder="Select Streams"
                                         />
-                                       
+
                                     </div>
                                     <div className="col-xl-2 mb-3">
                                         <label >{dynemicFields?.field_one}</label>
@@ -236,7 +236,6 @@ function DisterbuterFIlter({ dynemicFields, submitForm, initialValues, params, g
                                             classNamePrefix="select"
                                             placeholder="Select Course"
                                         />
-                                      
                                     </div>
 
 

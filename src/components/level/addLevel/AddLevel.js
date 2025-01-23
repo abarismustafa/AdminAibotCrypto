@@ -144,7 +144,7 @@ function AddLevel() {
                     <div className="card-body p-0">
                         <div className="table-responsive active-projects style-1">
                             <div className="tbl-caption tbl-caption-2">
-                                <h4 className="heading mb-0 p-2">{params?.id ? "Update" : "Add"} Level</h4>
+                                <h4 className="heading mb-0 p-2">{params?.id ? "Update" : "Add"} Level Income Master</h4>
                             </div>
                             <form className="tbl-captionn" onSubmit={handleSubmit}>
                                 <div className="row mt-2">
@@ -155,8 +155,6 @@ function AddLevel() {
                                         <select className="form-select form-control" aria-label="Default select example" name="plan_id" value={formData?.plan_id}
                                             onChange={handleChange}>
                                             <option selected>Select Package</option>
-                                            {/* <option value={"Percent"}>Abc</option>
-                                            <option value={"Flat"}>Def</option> */}
                                             {allPackageD && allPackageD?.map((item, i) => {
                                                 return <option key={i} value={item?._id}>{item?.name}</option>
                                             })}

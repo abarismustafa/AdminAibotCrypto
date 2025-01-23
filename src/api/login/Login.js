@@ -7182,8 +7182,8 @@ export const postPackage = (data) => {
     },
   });
 };
-export const updatePackage = (data, id) => {
-  return axiosInstance.put(`/Mlm_Plan/update_type/${id}`, data, {
+export const updatePackage = (data) => {
+  return axiosInstance.put(`/Mlm_Plan/update_type/${data?.id}`, data?.data, {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
@@ -7225,8 +7225,8 @@ export const postLevel = (data) => {
     },
   });
 };
-export const updateLevel = (data, id) => {
-  return axiosInstance.put(`/Mlmlevel/update_type/${id}`, data, {
+export const updateLevel = (data) => {
+  return axiosInstance.put(`/Mlmlevel/update_type/${data?.id}`, data?.data, {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
@@ -7335,4 +7335,20 @@ export const deleteAchievement = (id) => {
 
 export const getMemberIdCardDataById = (id) => {
   return axiosInstance.get(`${baseUrl}user/${id}`);
+};
+
+export const getPackagePurchaseData = (page, count) => {
+  return axiosInstance.get(
+    `/MlmPackagePurchase/admin?page=${page}&count=${count}`
+  );
+};
+export const getFundTransferReportData = (page, count) => {
+  return axiosInstance.get(
+    `/report/fundTransfer/admin?page=${page}&count=${count}`
+  );
+};
+export const getFilteredFundTransferReportData = (data) => {
+  return axiosInstance.get(
+    `/report/fundTransfer/admin?page=${data?.page}&count=${data?.count}&start_date=${data?.data?.start_date}&end_date=${data?.data?.end_date}`
+  );
 };

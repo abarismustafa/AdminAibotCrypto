@@ -4,6 +4,8 @@ import { GoPlus } from "react-icons/go";
 import { useEffect, useState } from "react";
 import Loadar from "../../../common/loader/Loader";
 import Breadcrumbs from "../../../common/breadcrumb/Breadcrumbs";
+import { deletePackagePurchase, getPackagePurchaseData } from "../../../api/login/Login";
+import FilterPackagePurchaseReport from "./FilterPackagePurchaseReport";
 
 function PackagePurchaseReport() {
     const breadCrumbsTitle = {
@@ -14,32 +16,32 @@ function PackagePurchaseReport() {
     };
 
     const [loading, setLoading] = useState(false);
-    // const [data, setData] = useState()
-    // const [count, setCount] = useState(10)
-    // const [page, setPage] = useState(0)
-    // const [totalCount, setTotalCount] = useState()
+    const [data, setData] = useState()
+    const [count, setCount] = useState(10)
+    const [page, setPage] = useState(0)
+    const [totalCount, setTotalCount] = useState()
 
-    // const getListData = async (page) => {
-    //     setLoading(true)
-    //     try {
-    //         const res = await getLevelData(page, count)
-    //         setTotalCount(res?.totalCount);
-    //         console.log("ListDataLR----", res?.data)
-    //         setData(res?.data)
-    //         setPage(page)
-    //     } catch (error) {
+    const getListData = async (page) => {
+        setLoading(true)
+        try {
+            const res = await getPackagePurchaseData(page, count)
+            setTotalCount(res?.totalCount);
+            console.log("packagePurchaseReportD----", res?.data)
+            setData(res?.data)
+            setPage(page)
+        } catch (error) {
 
-    //     }
-    //     setLoading(false)
-    // }
-    // const onChangeVal = (e) => {
-    //     getListData(e - 1)
+        }
+        setLoading(false)
+    }
+    const onChangeVal = (e) => {
+        getListData(e - 1)
 
-    // };
+    };
     // const deleteBlockAdd = async (id) => {
     //     setLoading(true)
     //     try {
-    //         await deleteLevel(id)
+    //         await deletePackagePurchase(id)
     //         let backList = totalCount % 11 === 0 ? page - 1 : page
     //         getListData(backList)
     //     } catch (error) {
@@ -55,15 +57,17 @@ function PackagePurchaseReport() {
     // const cancel = (e) => {
     //     message.error('Cancelled Successfully!');
     // };
-    // useEffect(() => {
-    //     getListData(page)
-    // }, []);
+    useEffect(() => {
+        getListData(page)
+    }, []);
+
+
 
     return (
         <>
             {loading && <Loadar />}
             <Breadcrumbs breadCrumbsTitle={breadCrumbsTitle} />
-            {/* <DownlineTeamFIlter /> */}
+            {/* <FilterPackagePurchaseReport /> */}
 
             <div>
                 <div className="row m-2">
@@ -100,22 +104,23 @@ function PackagePurchaseReport() {
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Payment Method</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Payment Status</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Valid Till</th>
-                                                    <th style={{ width: '150px' }}>Action</th>
+                                                    {/* <th style={{ width: '150px' }}>Action</th> */}
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td colSpan={8} style={{ textAlign: 'center' }}>No Data Found !</td>
-                                                </tr>
-                                                {/* {data && data?.map((item, i) => {
+                                                {data && data?.map((item, i) => {
                                                     return <tr role="row" key={item?._id}>
                                                         <td valign="top" className="dataTables_empty">{(i + 1) + (page * count)}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.Level}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.Reward}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.plan_id}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.No_of_match}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.isActive == true ? 'Active' : 'InActive'}</td>
-                                                        <td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.users?.name}</td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.users?.refer_id}</td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.plans}</td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.amount}</td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.payment_mode}</td>
+                                                        <td valign="top" className="dataTables_empty" >
+                                                            <span style={{ border: '1px solid black', padding: '2px 6px', borderRadius: '5px', backgroundColor: item?.payment_status == "Paid" ? 'green' : 'red', color: 'white', width: '80px', display: 'inline-block' }}>{item?.payment_status}</span>
+                                                        </td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.valid_till}</td>
+                                                        {/* <td>
                                                             <div className="d-flex">
                                                                 <Link to={`/level/edit/${item?._id}`} className="btn btn-primary shadow btn-xs sharp me-1">
                                                                     <i className="fa fa-pencil" />
@@ -133,19 +138,19 @@ function PackagePurchaseReport() {
                                                                     </Link>
                                                                 </Popconfirm>
                                                             </div>
-                                                        </td>
+                                                        </td> */}
                                                     </tr>
-                                                })} */}
+                                                })}
                                             </tbody>
                                         </table>
                                         <div className="dataTables_info" role="status" aria-live="polite">
-                                            Total 0 entries
+                                            Total {totalCount} entries
                                         </div>
                                         <div className="dataTables_paginate paging_simple_numbers">
                                             <Pagination
-                                            // defaultCurrent={1}
-                                            // onChange={onChangeVal}
-                                            // total={totalCount}
+                                                defaultCurrent={1}
+                                                onChange={onChangeVal}
+                                                total={totalCount}
                                             />
                                         </div>
                                     </div>
