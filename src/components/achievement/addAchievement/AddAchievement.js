@@ -14,11 +14,24 @@ function AddAchievement() {
     };
     const [formData, setFormData] = useState({
         name: "",
-        reward: "",
+        // reward: "",
         no_of_match: "",
         plan_id: "",
         isActive: "",
         no_of_days: "",
+
+
+        payment_per: "",
+        fase_achievement_income: "",
+        duration_type: "",
+        duration: "",
+        earn_up_to: "",
+        direct_referal_member: "",
+        direct_member: "",
+
+
+
+
     });
     const [load, setLoad] = useState(false);
     const [allPackageD, setAllPackageD] = useState();
@@ -41,11 +54,11 @@ function AddAchievement() {
         if (!formData.name) {
             errors.name = "Name is required.";
         }
-        if (!formData.reward) {
-            errors.reward = "Reward is required.";
-        }
+        // if (!formData.reward) {
+        //     errors.reward = "Reward is required.";
+        // }
         if (!formData.no_of_match) {
-            errors.no_of_match = "No Of Match is required.";
+            errors.no_of_match = "Bot Matching is required.";
         }
         if (!formData.no_of_days) {
             errors.no_of_days = "No Of Days is required.";
@@ -53,8 +66,29 @@ function AddAchievement() {
         if (!formData.plan_id) {
             errors.plan_id = "Package is required.";
         }
+        if (!formData.payment_per) {
+            errors.payment_per = "Payment Per is required.";
+        }
+        if (!formData.direct_member) {
+            errors.direct_member = "Direct Members/Referrals is required.";
+        }
+        if (!formData.fase_achievement_income) {
+            errors.fase_achievement_income = "Fast Achievement Bonous Income is required.";
+        }
+        if (!formData.earn_up_to) {
+            errors.earn_up_to = "Earn Upto is required.";
+        }
+        if (!formData.direct_referal_member) {
+            errors.direct_referal_member = "Minimum Direct/Referral Members  is required.";
+        }
         if (!formData.isActive) {
             errors.isActive = "IsActive is required.";
+        }
+        if (!formData.duration) {
+            errors.duration = "Duration is required.";
+        }
+        if (!formData.duration_type) {
+            errors.duration_type = "Duration Type is required.";
         }
 
         return errors;
@@ -170,19 +204,19 @@ function AddAchievement() {
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
-                                        <label htmlFor="name" className="form-label">
+                                        <label htmlFor="direct_member" className="form-label">
                                             Direct Members/Referrals Of Required <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="text"
-                                            name="name"
+                                            name="direct_member"
                                             className="form-control"
                                             placeholder="Enter Direct Members/Referrals Of Required"
-                                            value={formData?.name}
+                                            value={formData?.direct_member}
                                             onChange={handleChange}
                                         />
-                                        {errors.name && (
-                                            <div className="text-danger mt-1">{errors.name}</div>
+                                        {errors.direct_member && (
+                                            <div className="text-danger mt-1">{errors.direct_member}</div>
                                         )}
                                     </div>
 
@@ -204,39 +238,40 @@ function AddAchievement() {
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
-                                        <label htmlFor="duration_type" className="form-label">
+                                        <label htmlFor="payment_per" className="form-label">
                                             Payment Per (Daily/Weekly/Monthly) <span style={{ color: 'red' }}>*</span>
                                         </label>
-                                        <select className="form-select form-control" aria-label="Default select example" name="duration_type" value={formData?.duration_type}
+                                        <select className="form-select form-control" aria-label="Default select example" name="payment_per" value={formData?.payment_per}
                                             onChange={handleChange}>
                                             <option selected>Select Payment Per</option>
-                                            <option value={"Days"}>Days</option>
+                                            <option value={"Day"}>Days</option>
                                             <option value={"Week"}>Week</option>
-                                            <option value={"Months"}>Months</option>
-                                            <option value={"Years"}>Years</option>
+                                            <option value={"Month"}>Month</option>
+                                            <option value={"Year"}>Year</option>
                                         </select>
-                                        {errors.duration_type && (
-                                            <div className="text-danger mt-1">{errors.duration_type}</div>
+                                        {errors.payment_per && (
+                                            <div className="text-danger mt-1">{errors.payment_per}</div>
                                         )}
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
-                                        <label htmlFor="reward" className="form-label">
+                                        <label htmlFor="fase_achievement_income" className="form-label">
                                             Fast Achievement Bonous Income Amount <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
-                                            name="reward"
+                                            name="fase_achievement_income"
                                             className="form-control"
                                             placeholder="Enter Fast Achievement Bonous Income Amount"
-                                            value={formData?.reward}
+                                            value={formData?.fase_achievement_income}
                                             onChange={handleChange}
                                         />
-                                        {errors.reward && (
-                                            <div className="text-danger mt-1">{errors.reward}</div>
+                                        {errors.fase_achievement_income && (
+                                            <div className="text-danger mt-1">{errors.fase_achievement_income}</div>
                                         )}
                                     </div>
-                                    <div className="col-lg-6 mb-4">
+
+                                    {/* <div className="col-lg-6 mb-4">
                                         <label htmlFor="no_of_match" className="form-label">
                                             No Of Match <span style={{ color: 'red' }}>*</span>
                                         </label>
@@ -251,7 +286,8 @@ function AddAchievement() {
                                         {errors.no_of_match && (
                                             <div className="text-danger mt-1">{errors.no_of_match}</div>
                                         )}
-                                    </div>
+                                    </div> */}
+
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="no_of_days" className="form-label">
                                             No Of Days <span style={{ color: 'red' }}>*</span>
@@ -270,31 +306,31 @@ function AddAchievement() {
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
-                                        <label htmlFor="earnUpto" className="form-label">
+                                        <label htmlFor="earn_up_to" className="form-label">
                                             Earn Upto <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="text"
-                                            name="earnUpto"
+                                            name="earn_up_to"
                                             className="form-control"
                                             placeholder="Enter  Earn Upto"
-                                            value={formData?.earnUpto}
+                                            value={formData?.earn_up_to}
                                             onChange={handleChange}
                                         />
-                                        {errors.earnUpto && (
-                                            <div className="text-danger mt-1">{errors.earnUpto}</div>
+                                        {errors.earn_up_to && (
+                                            <div className="text-danger mt-1">{errors.earn_up_to}</div>
                                         )}
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
                                         <label htmlFor="duration_type" className="form-label">
-                                            Payment Per (Daily/Weekly/Monthly) <span style={{ color: 'red' }}>*</span>
+                                            Duration Per (Daily/Weekly/Monthly) <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <select className="form-select form-control" aria-label="Default select example" name="duration_type" value={formData?.duration_type}
                                             onChange={handleChange}>
-                                            <option selected>Select Payment Per</option>
+                                            <option selected>Select Duration Per</option>
                                             <option value={"Days"}>Days</option>
-                                            <option value={"Week"}>Week</option>
+                                            <option value={"Weeks"}>Week</option>
                                             <option value={"Months"}>Months</option>
                                             <option value={"Years"}>Years</option>
                                         </select>
@@ -304,35 +340,36 @@ function AddAchievement() {
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
-                                        <label htmlFor="duration" className="form-label">
+                                        <label htmlFor="direct_referal_member" className="form-label">
                                             Minimum Direct/Referral Members Required <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
-                                            name="duration"
+                                            name="direct_referal_member"
                                             className="form-control"
                                             placeholder="Enter Minimum Direct/Referral Members Required"
-                                            value={formData?.duration}
+                                            value={formData?.direct_referal_member}
                                             onChange={handleChange}
                                         />
-                                        {errors.duration && (
-                                            <div className="text-danger mt-1">{errors.duration}</div>
+                                        {errors.direct_referal_member && (
+                                            <div className="text-danger mt-1">{errors.direct_referal_member}</div>
                                         )}
                                     </div>
+
                                     <div className="col-lg-6 mb-4">
-                                        <label htmlFor="duration" className="form-label">
+                                        <label htmlFor="no_of_match" className="form-label">
                                             Bot Matching Required <span style={{ color: 'red' }}>*</span>
                                         </label>
                                         <input
                                             type="number"
-                                            name="duration"
+                                            name="no_of_match"
                                             className="form-control"
                                             placeholder="Enter Bot Matching Required"
-                                            value={formData?.duration}
+                                            value={formData?.no_of_match}
                                             onChange={handleChange}
                                         />
-                                        {errors.duration && (
-                                            <div className="text-danger mt-1">{errors.duration}</div>
+                                        {errors.no_of_match && (
+                                            <div className="text-danger mt-1">{errors.no_of_match}</div>
                                         )}
                                     </div>
 

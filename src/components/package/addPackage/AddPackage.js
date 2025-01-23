@@ -23,6 +23,8 @@ function AddPackage() {
         isActive: "",
         duration_type: "",
         duration: "",
+        max_binary_income: "",
+        per: "",
     });
     const [allCurrenncyD, setAllCurrencyD] = useState();
 
@@ -65,6 +67,12 @@ function AddPackage() {
         }
         if (!formData.duration) {
             errors.duration = "Duration is required.";
+        }
+        if (!formData.max_binary_income) {
+            errors.max_binary_income = "Max Binary Income is required.";
+        }
+        if (!formData.per) {
+            errors.per = "Per is required.";
         }
 
         return errors;
@@ -293,6 +301,39 @@ function AddPackage() {
                                     </div>
 
                                     <div className="col-lg-6 mb-4">
+                                        <label htmlFor="max_binary_income" className="form-label">
+                                            Maximum Binary Income Allowed <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            name="max_binary_income"
+                                            className="form-control"
+                                            placeholder="Enter Maximum Binary Income Allowed"
+                                            value={formData?.max_binary_income}
+                                            onChange={handleChange}
+                                        />
+                                        {errors.max_binary_income && (
+                                            <div className="text-danger mt-1">{errors.max_binary_income}</div>
+                                        )}
+                                    </div>
+                                    <div className="col-lg-6 mb-4">
+                                        <label htmlFor="per" className="form-label">
+                                            Per <span style={{ color: 'red' }}>*</span>
+                                        </label>
+                                        <select className="form-select form-control" aria-label="Default select example" name="per" value={formData?.per}
+                                            onChange={handleChange}>
+                                            <option selected>Select Per</option>
+                                            <option value={"Days"}>Days</option>
+                                            <option value={"Week"}>Week</option>
+                                            <option value={"Months"}>Months</option>
+                                            <option value={"Years"}>Years</option>
+                                        </select>
+                                        {errors.per && (
+                                            <div className="text-danger mt-1">{errors.per}</div>
+                                        )}
+                                    </div>
+
+                                    <div className="col-lg-6 mb-4">
                                         <label htmlFor="isActive" className="form-label">
                                             IsActive <span style={{ color: 'red' }}>*</span>
                                         </label>
@@ -306,6 +347,7 @@ function AddPackage() {
                                             <div className="text-danger mt-1">{errors.isActive}</div>
                                         )}
                                     </div>
+
 
                                     <div className='col-lg-12'>
                                         <button type='button' onClick={handleAddRow} className='btn btn-success float-end me-0'>Add Row</button>

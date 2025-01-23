@@ -97,7 +97,7 @@ function ListLevel() {
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Level</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Reward</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Package</th>
-                                                    <th style={{ width: '150px', textAlign: 'center' }}>No Of Match</th>
+                                                    <th style={{ width: '150px', textAlign: 'center' }}>Direct Members/Referral</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>IsActive</th>
                                                     <th style={{ width: '150px' }}>Action</th>
                                                 </tr>
@@ -137,7 +137,7 @@ function ListLevel() {
                                             </tbody>
                                         </table>
                                         <div className="dataTables_info" role="status" aria-live="polite">
-                                            Total 0 entries
+                                            Total {totalCount} entries
                                         </div>
                                         <div className="dataTables_paginate paging_simple_numbers">
                                             <Pagination

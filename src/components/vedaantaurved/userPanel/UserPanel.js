@@ -69,7 +69,7 @@ const WelcomeLetter = () => {
                         Congratulations! You have successfully registered with {state?.name ? <strong>{state?.name}</strong> : <strong>""</strong>}.
                         Welcome to  {state?.name ? <strong>{`${state?.name} India Family`}</strong> : <strong>""</strong>} , a team of stout-hearted professionals! You are joining a
                         revolution in the Era of Wellness as a Member who would utilize {state?.name ? <strong>{state?.name}</strong> : <strong>""</strong>}'s unique
-                        Organic and Natural Products for their own good health and financial prosperity. Your Member ID is {params?.id}.
+                        Organic and Natural Products for their own good health and financial prosperity. Your Member ID is {welcomeData?.refer_id}.
                     </p>
                     <p>
                         <strong>What will you achieve?</strong>

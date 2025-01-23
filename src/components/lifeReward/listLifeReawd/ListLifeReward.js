@@ -139,7 +139,7 @@ function ListLifeReward() {
                                             </tbody>
                                         </table>
                                         <div className="dataTables_info" role="status" aria-live="polite">
-                                            Total 0 entries
+                                            Total {totalCount} entries
                                         </div>
                                         <div className="dataTables_paginate paging_simple_numbers">
                                             <Pagination

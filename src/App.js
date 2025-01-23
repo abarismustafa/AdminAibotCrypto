@@ -89,6 +89,7 @@ import WelcomeLetter from "./components/vedaantaurved/userPanel/UserPanel";
 import GetIdCard from "./components/vedaantaurved/getIdCard/GetIdCard";
 import Bainarytree from "./pages/vedantayurveda/bainaryTree";
 import PackagePurchaseReportPage from "./pages/reports/packagePurchaseReportPage";
+import FundTransferReportPage from "./pages/reports/fundTransferReportPage";
 
 
 
@@ -297,11 +298,11 @@ function App() {
 
               {/* ===================MOIN Route End========================= */}
 
-
               <Route path="aibot/User-Panel/Member/welcomeletter/:id" element={<WelcomeLetter />} />
               <Route path="aibot/User-Panel/Member/getIDcard/:id" element={<GetIdCard />} />
               <Route path="aibot/User-Panel/Member/binarytree" element={<Bainarytree />} />
               <Route path="package-purchase/report" element={<PackagePurchaseReportPage />} />
+              <Route path="fund-transfer/report" element={<FundTransferReportPage />} />
 
               <Route path="*" element={<PageNotFound />} />
             </Route>

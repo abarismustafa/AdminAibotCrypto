@@ -109,7 +109,7 @@ function ListAchievement() {
                                                         <td valign="top" className="dataTables_empty" >{item?.name}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.reward}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.no_of_match}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.plan_id}</td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.plan_id?.name}</td>
                                                         <td valign="top" className="dataTables_empty" >
                                                             <span style={{ border: '1px solid black', padding: '2px 6px', borderRadius: '5px', backgroundColor: item?.isActive == true ? 'green' : 'red', color: 'white', width: '80px', display: 'inline-block' }}>{item?.isActive == true ? 'Active' : 'InActive'}</span>
                                                         </td>
@@ -137,7 +137,7 @@ function ListAchievement() {
                                             </tbody>
                                         </table>
                                         <div className="dataTables_info" role="status" aria-live="polite">
-                                            Total 0 entries
+                                            Total {totalCount} entries
                                         </div>
                                         <div className="dataTables_paginate paging_simple_numbers">
                                             <Pagination
