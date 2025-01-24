@@ -95,7 +95,7 @@ function ListAchievement() {
                                                 <tr role="row">
                                                     <th style={{ width: '50px', textAlign: 'center' }}>#</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Name</th>
-                                                    <th style={{ width: '150px', textAlign: 'center' }}>Reward</th>
+                                                    {/* <th style={{ width: '150px', textAlign: 'center' }}>Reward</th> */}
                                                     <th style={{ width: '150px', textAlign: 'center' }}>No Of Match</th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>Package </th>
                                                     <th style={{ width: '150px', textAlign: 'center' }}>isActive</th>
@@ -107,7 +107,7 @@ function ListAchievement() {
                                                     return <tr role="row" key={item?._id}>
                                                         <td valign="top" className="dataTables_empty">{(i + 1) + (page * count)}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.name}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.reward}</td>
+                                                        {/* <td valign="top" className="dataTables_empty" >{item?.reward}</td> */}
                                                         <td valign="top" className="dataTables_empty" >{item?.no_of_match}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.plan_id?.name}</td>
                                                         <td valign="top" className="dataTables_empty" >

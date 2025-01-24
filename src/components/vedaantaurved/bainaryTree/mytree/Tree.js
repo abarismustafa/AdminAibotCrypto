@@ -16,7 +16,6 @@ const Tree = () => {
             </div>
             <Badge className="fs-5 ">Aibot313</Badge>
           </div>
-
         </div>
 
         <div className="row">

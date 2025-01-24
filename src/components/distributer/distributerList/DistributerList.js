@@ -185,7 +185,17 @@ function DistributerList({ dynemicFields, loading, params, state, handleChange, 
                                                                     <Dropdown.Item href={`/aibot/User-Panel/Member/getIDcard/${item?._id}`}>ID Card</Dropdown.Item>
                                                                     <Dropdown.Item href={`/aibot/User-Panel/Member/welcomeletter/${item?._id}`} >Welcome Letter</Dropdown.Item>
                                                                     <Dropdown.Item href="/aibot/User-Panel/Member/binarytree" >Binary Tree</Dropdown.Item>
+
+                                                                    <Dropdown.Item href="/referral-income/report" >Referral Income</Dropdown.Item>
+                                                                    <Dropdown.Item href="level-income/report" >Level Income</Dropdown.Item>
+                                                                    <Dropdown.Item href="/rankReward-income/report" >Rank & Reward</Dropdown.Item>
+                                                                    <Dropdown.Item href="/fastAchievement-income/report" >Fast Achievement Bonus</Dropdown.Item>
+                                                                    <Dropdown.Item href="/matchingBonus-income/report" >Matching Bonus</Dropdown.Item>
+                                                                    <Dropdown.Item href="/society-income/report" >Society Income</Dropdown.Item>
+                                                                    <Dropdown.Item href="/tradingProfit-income/report" >Trading Profit Income</Dropdown.Item>
+                                                                    <Dropdown.Item href="/earningCycleBonus-income/report" >Earning Cycle Bonus</Dropdown.Item>
                                                                     <Dropdown.Item href="#" >Certificate</Dropdown.Item>
+
                                                                     <Dropdown.Item href="#" onClick={handleShow2}>Scheme</Dropdown.Item>
                                                                     <Dropdown.Item href="#" onClick={handleShow3}>Add Id Stock</Dropdown.Item>
                                                                     <Dropdown.Item href="#" onClick={handleShow4}>Permission</Dropdown.Item>

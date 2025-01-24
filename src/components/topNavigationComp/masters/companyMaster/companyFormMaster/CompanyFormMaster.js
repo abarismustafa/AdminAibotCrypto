@@ -11,9 +11,8 @@ import { MdDelete } from 'react-icons/md';
 import { IoMdAddCircle } from 'react-icons/io';
 import { addCompany, cityAddCollageSelectList, clodinaryImage, CompanyTypeList, countryList, getStateMaster, getupdateCompanyId, languageList, StateAddCollageSelectList, updateCompany } from '../../../../../api/login/Login';
 import { Accordion } from 'react-bootstrap';
-// import CompanyDetail from '../../../../companydetail/CompanyDeatail';
-import Loadar from '../../../../../common/loader/Loader';
 import CompanyDetail from '../../../../companydetail/CompanyDeatail';
+import Loadar from '../../../../../common/loader/Loader';
 
 function CompanyFormMaster() {
     const breadCrumbsTitle = {

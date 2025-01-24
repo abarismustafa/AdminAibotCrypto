@@ -26,7 +26,7 @@ function ListLifeReward() {
         try {
             const res = await getLifeRewardData(page, count)
             setTotalCount(res?.totalCount);
-            console.log("ListDataLR----", res?.data)
+            console.log("rewardList----", res?.data)
             setData(res?.data)
             setPage(page)
         } catch (error) {
@@ -111,7 +111,7 @@ function ListLifeReward() {
                                                         <td valign="top" className="dataTables_empty" >{item?.reward}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.no_of_match}</td>
                                                         <td valign="top" className="dataTables_empty" >{item?.giftName}</td>
-                                                        <td valign="top" className="dataTables_empty" >{item?.plan_id}</td>
+                                                        <td valign="top" className="dataTables_empty" >{item?.plan_id?.name}</td>
                                                         <td valign="top" className="dataTables_empty" >
                                                             <span style={{ border: '1px solid black', padding: '2px 6px', borderRadius: '5px', backgroundColor: item?.isActive == true ? 'green' : 'red', color: 'white', width: '80px', display: 'inline-block' }}>{item?.isActive == true ? 'Active' : 'InActive'}</span>
                                                         </td>
