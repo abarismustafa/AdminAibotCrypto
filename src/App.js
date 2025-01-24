@@ -90,10 +90,30 @@ import GetIdCard from "./components/vedaantaurved/getIdCard/GetIdCard";
 import Bainarytree from "./pages/vedantayurveda/bainaryTree";
 import PackagePurchaseReportPage from "./pages/reports/packagePurchaseReportPage";
 import FundTransferReportPage from "./pages/reports/fundTransferReportPage";
+import LevelIncomeReportPage from "./pages/incomeReportsPages/levelIncomeReportPage";
+import ReferralIncomeReportPage from "./pages/incomeReportsPages/referralIncomePage";
+import RankRewardIncomePage from "./pages/incomeReportsPages/rankRewardIncomePage";
+import FastAcheivementBonusReportPage from "./pages/incomeReportsPages/fastAchievementBonusReportPage";
+import MatchingBonusReportPage from "./pages/incomeReportsPages/matchingBonusReportPage";
+import SocietyIncomeReportPage from "./pages/incomeReportsPages/societyIncomeReportPage";
+import TradingProfitIncomeReportPage from "./pages/incomeReportsPages/tradingProfitIncomeReportPage";
+import EarningCycleBonusReportPage from "./pages/incomeReportsPages/earningCycleBonusReportPage";
 
 
 
-
+import AddSubModule from "./pages/RolePermission/subModule/addSubModule/AddSubModule";
+import MainSubListModule from "./pages/RolePermission/subModule/mailSubListModule/MainSubListModule";
+import AddRole from "./pages/RolePermission/addRole/AddRole";
+import ListMainRole from "./pages/RolePermission/addRole/listmainRole/ListMainRole";
+import FormSubSubModule from "./pages/RolePermission/subSubModule/formSubSubModule/FormSubSubModule";
+import MainSubSubModule from "./pages/RolePermission/subSubModule/mainSubSubModule/MainSubSubModule";
+import AddMainModulePage from "./pages/RolePermission/addMainModule/AddMainModule";
+import MainListModule from "./pages/RolePermission/addMainModule/mailListModule/MailLisyModule";
+import RoleMasterPage from "./pages/topNavigationPages/Master/roleMaster";
+import AddRoleMaster from "./components/topNavigationComp/masters/roleMaster/addRoleMaster/AddRoleMaster";
+import ReferralCommissionReportPage from "./pages/reports/referralComissionReportPage";
+import BinaryComissionReportPage from "./pages/reports/binaryComssionReportPage";
+import InvestmentReportPage from "./pages/reports/investmentReportPage";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -303,6 +323,86 @@ function App() {
               <Route path="aibot/User-Panel/Member/binarytree" element={<Bainarytree />} />
               <Route path="package-purchase/report" element={<PackagePurchaseReportPage />} />
               <Route path="fund-transfer/report" element={<FundTransferReportPage />} />
+
+              <Route path="referral-income/report" element={<ReferralIncomeReportPage />} />
+              <Route path="level-income/report" element={<LevelIncomeReportPage />} />
+              <Route path="rankReward-income/report" element={<RankRewardIncomePage />} />
+              <Route path="fastAchievement-income/report" element={<FastAcheivementBonusReportPage />} />
+              <Route path="matchingBonus-income/report" element={<MatchingBonusReportPage />} />
+              <Route path="society-income/report" element={<SocietyIncomeReportPage />} />
+              <Route path="tradingProfit-income/report" element={<TradingProfitIncomeReportPage />} />
+              <Route path="earningCycleBonus-income/report" element={<EarningCycleBonusReportPage />} />
+
+
+              <Route path="referral-commission/report" element={<ReferralCommissionReportPage />} />
+              <Route path="binary-commission/report" element={<BinaryComissionReportPage />} />
+              <Route path="investment/report" element={<InvestmentReportPage />} />
+
+
+
+
+
+
+
+
+
+              <Route
+                path="/add-sub-module"
+                element={<AddSubModule />}
+              />
+
+              <Route
+                path="/update-sub-module/:id"
+                element={<AddSubModule />}
+              />
+              <Route
+                path="/list-sub-module"
+                element={<MainSubListModule />}
+              />
+
+              <Route
+                path="/add-role"
+                element={<AddRole />}
+              />
+              <Route
+                path="/list-role"
+                element={<ListMainRole />}
+              />
+              <Route
+                path="/update-role/:id"
+                element={<AddRole />}
+              />
+
+              <Route
+                path="/add-sub-sub-module"
+                element={<FormSubSubModule />}
+              />
+              <Route
+                path="/update-sub-sub-module/:id"
+                element={<FormSubSubModule />}
+              />
+              <Route
+                path="/list-sub-sub-module"
+                element={<MainSubSubModule />}
+              />
+              <Route
+                path="/add-main-module"
+                element={<AddMainModulePage />}
+              />
+              <Route
+                path="/update-main-module/:id"
+                element={<AddMainModulePage />}
+              />
+              <Route
+                path="/listMainModule"
+                element={<MainListModule />}
+              />
+              <Route path="role-master" element={<RoleMasterPage />} />
+              <Route path="add-role-master" element={<AddRoleMaster />} />
+              <Route
+                path="update-role-master/:id"
+                element={<AddRoleMaster />}
+              />
 
               <Route path="*" element={<PageNotFound />} />
             </Route>

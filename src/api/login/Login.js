@@ -7352,3 +7352,4 @@ export const getFilteredFundTransferReportData = (data) => {
     `/report/fundTransfer/admin?page=${data?.page}&count=${data?.count}&start_date=${data?.data?.start_date}&end_date=${data?.data?.end_date}`
   );
 };
+
